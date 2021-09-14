@@ -1,9 +1,6 @@
-/**
- * 
- */
-var dataSet = [100,255,320,150,215];
-var colormap = ["red","blue","yellow"];
-d3.json(dataSet,function(err,data){
+var dataSet = [];
+var colormap = ["red","blue","yellow","orange","green"];
+d3.json('http://localhost:8282/chart/selectmember',function(err,data){
 	for(i=0; i<data.length; i++){
 		dataSet.push(data[i].age*5);
 		console.log(data[i].age*5);
@@ -21,10 +18,14 @@ d3.json(dataSet,function(err,data){
 	.attr("y", function(d, i) {
 		return i * 45 + 10;
 	})
-	.attr("width", function(d, i) {
-		return d; 
-	})
+	.attr("width",0)
 	.attr("height", 25)
+	
+	
+	.transition()
+	.duration(1000)
+	.delay(function(d,i){return i*1000;})
+	.attr("width",function(d,i){ return d; });
 });
 
 
@@ -34,6 +35,6 @@ d3.select("#barbtn")
 			.transition()
 			.duration(1000)
 			.attr("width", function() {
-				return (Math.random() * 300) + 1;
+				return d;
 			})
 	});

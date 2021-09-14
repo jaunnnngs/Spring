@@ -287,7 +287,7 @@ function displayInfowindow(marker, title) {
     '        <div class="body">' +    
     '            <div class="desc">' + 
     '                <div><input type="submit" value="예약하기"></div>' + 
-    '            </div>' + 
+    '            </div>' + 	
     '        </div>' + 
     '    </div>' +    
     '</div>'+

@@ -25,12 +25,12 @@ public class HomeController {
 		return "main";
 	}
 	
-	@RequestMapping(value = "/main", method = { RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping(value = "/map", method = { RequestMethod.POST,RequestMethod.GET})
 	public String map() {
 
 		return "map";
 		}
-	@RequestMapping(value = "/map", method = { RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping(value = "/evaluate", method = { RequestMethod.POST,RequestMethod.GET})
 	public String evaluate() {
 
 		return "evalaute";
