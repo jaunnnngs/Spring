@@ -40,7 +40,7 @@
 		<div class="right_panel">
 			<div>
 				<h1>데이터에 따른 그래프 표시</h1>
-				<svg id="myGraph2"></svg>
+				<svg id="myGraph2"></svg> 
 			</div>
 			<div class="rightbtndiv">
 				<button type="button" id="piebtn">update</button>

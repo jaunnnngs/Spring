@@ -1,4 +1,4 @@
-package com.stun.review_board;
+package com.stun.review_board.Controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -25,11 +25,11 @@ public class HomeController {
 		return "main";
 	}
 	
-	@RequestMapping(value = "/map", method = { RequestMethod.POST,RequestMethod.GET})
-	public String map() {
-
-		return "map";
-		}
+//	@RequestMapping(value = "/map", method = { RequestMethod.POST,RequestMethod.GET})
+//	public String map() {
+//
+//		return "map";
+//		}
 	@RequestMapping(value = "/evaluate", method = { RequestMethod.POST,RequestMethod.GET})
 	public String evaluate() {
 
