@@ -5,7 +5,7 @@
 <mapper namespace="member">
 	<select id="loginchk" 
 			parameterType="com.stun.review_board.dto.MemberDTO" 
-			resultType="com.mh.mocom.dto.MemberDto">
+			resultType="com.stun.review_board.dto.MemberDTO">
 		select * from member where id=#{id} and pw=#{pw}
 		limit 0,1
 	</select>

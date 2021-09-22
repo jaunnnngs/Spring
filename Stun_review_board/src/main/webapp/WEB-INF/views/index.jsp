@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,7 @@
 		<div id="root">
 			<div class="container">
 				<div class="left_panel">
-					<img src="/mocom/resources/images/mainLog.jpg">
+					<img src="/jaunnnngs/resources/images/mainLog.jpg">
 				</div>
 				<div class="right_panel">
 					<div class="right_panel_main">
