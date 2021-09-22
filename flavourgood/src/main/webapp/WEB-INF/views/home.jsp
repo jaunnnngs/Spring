@@ -1,14 +1,13 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 
 </head>
 <body>
-<form action="loginchk" method="post">
+<form action="map" method="post">
 <div id="root">
 	<div class="container">
 				<div><h3>로그인</h3></div>

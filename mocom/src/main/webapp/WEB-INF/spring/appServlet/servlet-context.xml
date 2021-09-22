@@ -29,9 +29,9 @@
 		<!-- value="jdbc:mysql://127.0.0.1:3306/mh?useSSL=false&amp;serverTimezone=UTC"> -->
 		<!-- </beans:property> -->
 		<beans:property name="driverClassName"
-			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+			value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:log4jdbc:mysql://127.0.0.1:3306/mh?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
+			value="jdbc:mysql://127.0.0.1:3306/my?useSSL=false&amp;serverTimezone=UTC" />
 		<beans:property name="username" value="root"></beans:property>
 		<beans:property name="password" value="1234"></beans:property>
 	</beans:bean>
