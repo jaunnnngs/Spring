@@ -21,7 +21,7 @@ public class LoginController {
 		dto = dao.logincheck(dto);
 		if (dto != null) {
 			session.setAttribute("dto", dto);
-			return "chart";
+			return "Board_Notice";
 		} else {
 			return "redirect:/?text=loginfail";
 		}

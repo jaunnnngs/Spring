@@ -9,6 +9,13 @@
 		select * from member where id=#{id} and pw=#{pw}
 		limit 0,1
 	</select>
+	<!-- <select id="joincheck" 
+			parameterType="com.stun.review_board.dto.MemberDTO" 
+			resultType="com.stun.review_board.dto.MemberDTO">
+		select * from member where id=#{id} and pw=#{pw}
+		
+	</select> -->
+	
 	<select id="selectone" parameterType="int" resultType="com.stun.review_board.dto.MemberDTO">
 		select * from member where idx=#{idx}
 	</select>

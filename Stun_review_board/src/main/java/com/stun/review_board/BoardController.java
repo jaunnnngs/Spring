@@ -22,7 +22,6 @@ public class BoardController {
 	@RequestMapping(value="main")
 	public String main(Model model) {
 		List<BoardDTO> list = dao.selectlist();
-		// 최신글이 5개가 아니면 5개로 강제로 만들기
 		if( list.size() < 6 ) {
 			while( list.size() !=5 )
 				list.add(new BoardDTO());
@@ -34,7 +33,6 @@ public class BoardController {
 	@RequestMapping(value="qna")
 	public String qna(Model model) {
 		List<BoardDTO> list = dao.selectlist();
-		// 최신글이 5개가 아니면 5개로 강제로 만들기
 		if( list.size() < 6 ) {
 			while( list.size() !=5 )
 				list.add(new BoardDTO());
@@ -46,7 +44,6 @@ public class BoardController {
 	@RequestMapping(value="gallery")
 	public String gallery(Model model) {
 		List<BoardDTO> list = dao.selectlist();
-		// 최신글이 5개가 아니면 5개로 강제로 만들기
 		if( list.size() < 6 ) {
 			while( list.size() !=5 )
 				list.add(new BoardDTO());

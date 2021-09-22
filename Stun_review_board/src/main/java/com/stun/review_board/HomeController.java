@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model,String text) {
-//		sqlsession.selectOne("member.loginchk");
+//		sqlsession.selectOne("member.logincheck");
 		System.out.println("text = "+text);
 		if (text != null && text.equals("loginfail"))
-			model.addAttribute("text","·Î±×ÀÎ Á¤º¸¸¦ È®ÀÎÇÏ¼¼¿ä...");
+			model.addAttribute("text","ë¡œê·¸ì¸ ì •ë³´ë¥¼ ë‹¤ì‹œ í™•ì¸í•˜ì„¸ìš”...");
 		return "index";
 	}
 }
