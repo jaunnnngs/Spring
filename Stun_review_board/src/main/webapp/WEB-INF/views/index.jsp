@@ -5,14 +5,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <!--부트스트랩 적용시키기  -->
-<link rel="stylesheet" href="/jaunnnngs/resources/index.css">
+<link rel="stylesheet" href="resources/index.css">
 </head>
 <body>
 	<form action="loginchk" method="post">
 		<div id="root">
 			<div class="container">
-				<div class="left_panel">
-					<img src="/jaunnnngs/resources/images/mainLog.jpg">
+				<div class="left_panel" >
+					<img src="resources/images/mainLog.jpg">
 				</div>
 				<div class="right_panel">
 					<div class="right_panel_main">

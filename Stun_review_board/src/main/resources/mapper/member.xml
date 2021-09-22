@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
-	<select id="loginchk" 
+	<select id="logincheck" 
 			parameterType="com.stun.review_board.dto.MemberDTO" 
 			resultType="com.stun.review_board.dto.MemberDTO">
 		select * from member where id=#{id} and pw=#{pw}
