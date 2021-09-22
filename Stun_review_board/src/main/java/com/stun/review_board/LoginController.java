@@ -11,19 +11,18 @@ import com.stun.review_board.dao.MemberDAO;
 import com.stun.review_board.dto.MemberDTO;
 
 @Controller
-public class MemberController {
+public class LoginController {
 
 	@Autowired
 	MemberDAO dao;
-	
-	@RequestMapping(value="/logincheck", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/logincheck", method = RequestMethod.POST)
 	public String logincheck(MemberDTO dto, HttpSession session) {
-		dto= dao.logincheck(dto);
-		if(dto != null) {
+		dto = dao.logincheck(dto);
+		if (dto != null) {
 			session.setAttribute("dto", dto);
 			return "chart";
-		}
-		else {
+		} else {
 			return "redirect:/?text=loginfail";
 		}
 	}

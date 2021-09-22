@@ -2,13 +2,14 @@ package com.stun.review_board.dto;
 
 public class MemberDTO {
 	public int idx;
+	public String nickname;
+	public String name;
 	public String id;
 	public String pw;
-	public String phonenumber;
 	
 	@Override
 	public String toString() {
-		return "MemberDTO [idx=" + idx + ", id=" + id + ", pw=" + pw + ", phonenumber=" + phonenumber + "]";
+		return "MemberDTO [idx=" + idx + ", nickname=" + nickname + ", name=" + name + ", id=" + id + ", pw=" + pw + "]";
 	}
 
 	public int getIdx() {
@@ -17,6 +18,22 @@ public class MemberDTO {
 
 	public void setIdx(int idx) {
 		this.idx = idx;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getId() {
@@ -34,13 +51,6 @@ public class MemberDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-
-	public String getPhonenumber() {
-		return phonenumber;
-	}
-
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
-	}
-
+	
+	
 }
