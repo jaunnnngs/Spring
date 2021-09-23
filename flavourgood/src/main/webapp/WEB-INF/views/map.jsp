@@ -279,6 +279,7 @@ function displayPagination(pagination) {
 function displayInfowindow(marker, title) {
 	var content = 
 		'<form action="evaluate" method="post">'+
+		'<input type="hidden" name="title" value="'+title+'"'+
 		'<div class="wrap">' + 
     '    <div class="info">' + 
     '        <div class="title">' + title + 

@@ -1,15 +1,22 @@
 package com.my.reviewflavour;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.my.reviewflavour.Dao.MemberDao;
+import com.my.reviewflavour.Dto.MemberDto;
 
 /**
  * Handles requests for the application home page.
@@ -17,23 +24,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	@Autowired
+	MemberDao dao;
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String loginchk(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	@RequestMapping(value = "/loginchk",method = { RequestMethod.POST,RequestMethod.GET})
+	public String loginchk(MemberDto dto, HttpSession session) {
+		dto=dao.chklogin(dto);
+		if(dto!=null) {
+			session.setAttribute("dto",dto);
+			return "map";
+		}
+		else
+		{
+			return "redirect:/?text=loginfail";
+		}
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-		String formattedDate = dateFormat.format(date);
+	}
+	@RequestMapping(value = "/joinchk",method = { RequestMethod.POST,RequestMethod.GET})
+	public String joinchk(MemberDto dto, HttpSession session) {
+		dto=dao.chkjoin(dto);
+		if(dto!=null) {
+			session.setAttribute("dto",dto);
+			return "redirect:/?text=loginsuccess";
+		}
+		else
+		{
+			return "redirect:/?text=loginsuccess";
+		}
 		
-		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
 	}
 	
 

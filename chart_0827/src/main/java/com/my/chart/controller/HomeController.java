@@ -25,11 +25,11 @@ public class HomeController {
 	SqlSession sqlsession;
 	
 	
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model,String text) {
 		
-		//sqlsession.selectOne("member.loginchk");
+		@RequestMapping(value = "/", method = RequestMethod.GET)
+		public String home(Locale locale, Model model,String text) {
+			
+			//sqlsession.selectOne("member.loginchk");
 		System.out.println("text= "+text);
 		if(text!=null && text.equals("loginfail")) {
 			model.addAttribute("text","로그인 정보를 확인하세요");

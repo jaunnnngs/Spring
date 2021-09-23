@@ -119,50 +119,59 @@ svg {
 	margin-left: 20px;
 }
 
-th,td{padding:15px;}
-table{border-spacing:10px;}
+th, td {
+	padding: 15px;
+}
+
+table {
+	border-spacing: 10px;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-	<form action="evalaute" method="post">
-		<div class="container">
-			<div class="left_panel">
-				별점 그래프<br>
-				<svg id="myGraph1"></svg>
-				<button type="button" id="barbtn">update</button>
-				<script src="./barjson.js"></script>
-			</div>
-			<div class="right_panel">
-				<div class="right_panel_main">
-					별점 후기 남기는 게시판
-					<table class="table-wrapper" >
-						<thead >
-							<tr>
-								<th>글번호</th>
-								<th>제목</th>
-								<th>작성날짜</th>
-								<th>작성자</th>
-							</tr>
-						</thead>
-						<tbody>
-								<tr>
-									<td>1</td>
-									<!-- ne는 = 이라는 의미 -->
-									<td>가게이름</td>
-									<td>작성자명</td>
-									<td>후기</td>
-								</tr>
-						</tbody>
-					</table>
 
-					</table>
-				</div>
+	<div class="container">
+		<div class="left_panel">
+			별점 그래프<br>
+			<svg id="myGraph1"></svg>
+			<button type="button" id="barbtn">update</button>
+			<script src="./barjson.js"></script>
+		</div>
+		<div class="right_panel">
+			<div class="right_panel_main">
+				별점 후기 남기는 게시판
+				<table class="table-wrapper">
+					<thead>
+						<tr>
+							<th>글번호</th>
+							<th>제목</th>
+							<th>작성날짜</th>
+							<th>작성자</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${list }" var="dto">
+							<tr>
+								<td><c:if test="${dto.idx ne '0'}">${dto.idx }</c:if></td>
+								<!-- ne는 = 이라는 의미 -->
+								
+								<td>${dto.title}</td>
+								<td>${dto.nickname }</td>
+								<td>${dto.content }</td>
+								<td>${dto.wdate }</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+
+				</table>
 			</div>
 		</div>
-	</form>
+	</div>
+
 
 </body>
 </html>
