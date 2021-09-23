@@ -26,7 +26,7 @@
 		insert into member
 		(nickname, name, id, pw)
 		values
-		(#{nickname}, #{name},#{id}, #{pw})
+		(#{nickname}, #{name}, #{id}, #{pw})
 	</insert>
 	<update id="update" parameterType="com.stun.review_board.dto.MemberDTO">
 		update member
