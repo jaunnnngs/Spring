@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,11 +154,8 @@ table {
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${list }" var="dto">
+						<c:forEach items="${list}" var="dto">
 							<tr>
-								<td><c:if test="${dto.idx ne '0'}">${dto.idx }</c:if></td>
-								<!-- ne는 = 이라는 의미 -->
-								
 								<td>${dto.title}</td>
 								<td>${dto.nickname }</td>
 								<td>${dto.content }</td>
@@ -165,8 +163,6 @@ table {
 							</tr>
 						</c:forEach>
 					</tbody>
-				</table>
-
 				</table>
 			</div>
 		</div>

@@ -19,15 +19,16 @@ import com.my.reviewflavour.Dto.BoardDto;
 
 
 @Controller
-@RequestMapping(value="evaluate")
+
 public class BoardController {
 		
 	@Autowired
 	SqlSession sqlsession;
+	@Autowired
 	BoardDao dao;
 	
 	
-	@RequestMapping(value = "boardmain")
+	@RequestMapping(value = "/evaluate",method = { RequestMethod.POST,RequestMethod.GET})
 	public String evaluate(Model model) {
 		List<BoardDto> list= dao.selectlist();
 		if(list.size()<5)
@@ -38,7 +39,7 @@ public class BoardController {
 			}
 		}
 		model.addAttribute("list",list);
-		return "evaluate";
+		return "/evaluate";
 	}
 	
 }

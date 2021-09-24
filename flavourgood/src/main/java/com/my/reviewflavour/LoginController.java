@@ -44,14 +44,8 @@ public class LoginController {
 	@RequestMapping(value = "/joinchk",method = { RequestMethod.POST,RequestMethod.GET})
 	public String joinchk(MemberDto dto, HttpSession session) {
 		dto=dao.chkjoin(dto);
-		if(dto!=null) {
-			session.setAttribute("dto",dto);
-			return "redirect:/?text=loginsuccess";
-		}
-		else
-		{
-			return "redirect:/?text=loginsuccess";
-		}
+		
+		return "map";
 		
 		
 	}

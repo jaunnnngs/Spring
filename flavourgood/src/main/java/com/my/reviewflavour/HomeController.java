@@ -39,10 +39,10 @@ public class HomeController {
 	}
 	
 
-//	@RequestMapping(value = "/join", method = { RequestMethod.POST,RequestMethod.GET})
-//	public String join(Locale locale, Model model) {
-//
-//		return "join";
-//	}
+	@RequestMapping(value = "/join", method = { RequestMethod.POST,RequestMethod.GET})
+	public String join(Locale locale, Model model) {
+
+		return "join";
+	}
 	
 }

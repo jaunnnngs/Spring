@@ -7,7 +7,7 @@
 <mapper namespace="board">
 	<select id="selectlist"
 		resultType="com.my.reviewflavour.Dto.BoardDto">
-		select * from stunboard 
+		select * from stunboard title=#{title}
 	</select>
 	<!-- <insert id="insert" parameterType="com.my.reviewflavour.Dto.BoardDto">
 		INSERT INTO my.board (title,
