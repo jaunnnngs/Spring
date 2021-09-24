@@ -1,4 +1,3 @@
-<%@page import="com.stun.review_board.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -22,7 +21,14 @@
 </head>
 <body>
 	<form action="joinaction" method="post">
-
+	<div>${sessionScope.dto.id}님환영합니다.</div>
+		<%
+		// 현재 세션 상태를 체크한다
+		String userID = null;
+		if (session.getAttribute("id") != null) {
+			userID = (String) session.getAttribute("id");
+		}
+		%>
 
 		<!-- Responsive navbar-->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,44 +41,53 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<%
+					// 로그인 하지 않았을 때 보여지는 화면
+					if (userID == null) {
+					%>
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
-						<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="index">로그인</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="notice">공지사항</a></li>
+
 					</ul>
+					<%
+					// 로그인이 되어 있는 상태에서 보여주는 화면
+					} else {
+					%>
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="index">로그아웃</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="notice">맛집후기</a></li>
+					</ul>
+					<%
+					}
+					%>
 				</div>
 			</div>
 		</nav>
-	</form>
-	<div>${sessionScope.dto.id}님환영합니다.</div>
-	<div class="container1">
-		<div class="item" style="margin: 0 auto">
-			<form action="logincheck" method="post">
-				<div>
-					<h3>로그인</h3>
+		<!-- 게시판 섹션-->
+		<section class="bg-light py-5">
+			<div class="container px-5 my-5 px-5">
+				<div class="text-center mb-5">
+					<h2 class="fw-bolder">STUN 공지사항</h2>
 				</div>
-				<div>
-					<h5>ID</h5>
-				</div>
-				<div>
-					<input type="text" name="id">
-				</div>
-				<div>
-					<h5>비밀번호</h5>
-				</div>
-				<div>
-					<input type="text" name="pw">
-				</div>
+				<div class="row gx-5 justify-content-center">
+					<div class="col-lg-6">
+						<form id="contactForm" data-sb-form-api-token="API_TOKEN">
 
-				<div>
-					<input type="submit" value="로그인">
+							
+
+						</form>
+
+					</div>
 				</div>
-				<div>${text}</div>
-			</form>
-			<div class="item">
-				<a class="link" href="join">회원가입</a>
 			</div>
-		</div>
-	</div>
+		</section>
+	</form>
+
 	<!-- 하단화면-->
 
 	<footer class="py-5 bg-dark">

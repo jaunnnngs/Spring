@@ -21,7 +21,7 @@ public class LoginController {
 		dto = dao.logincheck(dto);
 		if (dto != null) {
 			session.setAttribute("dto", dto);
-			return "Board_Notice";
+			return "notice";
 		} else {
 			return "redirect:/?text=loginfail";
 		}

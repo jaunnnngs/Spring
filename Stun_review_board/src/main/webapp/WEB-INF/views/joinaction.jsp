@@ -31,7 +31,7 @@
 	}
 	
 	//하나라도 빈칸있는경우
-	/* if(NewUser.getUserID().equals("") || NewUser.getUserPassword().equals("")|| NewUser.getName().equals("")|| NewUser.getEmail().equals("")|| NewUser.getNumber().equals(""))
+	if(dto.getName().equals("") || dto.getNickname().equals("")|| dto.getId().equals("")|| dto.getPw().equals(""))
 	{
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
@@ -39,11 +39,11 @@
 		script.println("</script>");
 		script.close();
 		return;
-	} */
+	}
 	
 	//ID와 비밀번호가 모두 있는 경우
-	/* st_UserDAO userDAO = new st_UserDAO();
-	int result = userDAO.join(NewUser.getUserID(),NewUser.getUserPassword(),NewUser.getName(),NewUser.getEmail(),NewUser.getNumber());
+	/* MemberDAO dao = new MemberDAO();
+	int result = dao.insert(dto.getName().equals("") || dto.getNickname().equals("")|| dto.getId().equals("")|| dto.getPw().equals(""));
 	if(result == -1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
@@ -58,8 +58,7 @@
 		script.println("</script>");
 		script.close();
 		return;
-	} */
-	
+	}	 */
 
 %>
 </body>
