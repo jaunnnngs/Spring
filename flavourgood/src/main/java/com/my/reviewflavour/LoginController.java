@@ -44,9 +44,8 @@ public class LoginController {
 	@RequestMapping(value = "/joinchk",method = { RequestMethod.POST,RequestMethod.GET})
 	public String joinchk(MemberDto dto, HttpSession session) {
 		dto=dao.chkjoin(dto);
-		
+		session.setAttribute("dto",dto);
 		return "map";
-		
 		
 	}
 	

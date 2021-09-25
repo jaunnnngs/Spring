@@ -9,8 +9,7 @@
 		parameterType="com.my.reviewflavour.Dto.MemberDto"
 		resultType="com.my.reviewflavour.Dto.MemberDto">
 		select * from stunmember where id=#{id} and pw=#{pw}
-		limit
-		0,1
+		limit 0,1
 
 	</select>
 

@@ -15,9 +15,15 @@ public class BoardDao {
 	@Autowired
 	SqlSession sqlsession;
 
-	public List<BoardDto> selectlist() {
+	public List<BoardDto> selectlist(BoardDto dto) {
 
-		List<BoardDto> boardlist = sqlsession.selectList("board.selectlist");
+		List<BoardDto> boardlist = sqlsession.selectList("board.selectlist",dto);
+		return boardlist;
+	}
+	
+	public List<BoardDto> insertlist(BoardDto dto)
+	{
+		List<BoardDto> boardlist= sqlsession.selectList("board.insert",dto);
 		return boardlist;
 	}
 

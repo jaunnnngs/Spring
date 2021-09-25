@@ -30,19 +30,18 @@ public class HomeController {
 		if(text!=null && text.equals("loginfail")) {
 			model.addAttribute("text","로그인 정보를 확인하세요");
 		}
-//		else if(text.equals("loginsuccess"))
-//		{
-//			model.addAttribute("text","회원가입 성공!");
-//		}
-
 		return "home";
 	}
 	
 
 	@RequestMapping(value = "/join", method = { RequestMethod.POST,RequestMethod.GET})
-	public String join(Locale locale, Model model) {
-
+	public String join(Locale locale, Model model,String text) {
+		if(text!=null&&text.equals("joinfail")) {
+			model.addAttribute("text","올바르지 않은 회원가입 정보입니다");
+		}
+		
 		return "join";
 	}
+
 	
 }

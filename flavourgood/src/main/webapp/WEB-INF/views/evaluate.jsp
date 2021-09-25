@@ -24,7 +24,7 @@
 	height: 100%;
 	width: 100%;
 	/* r g b*/
-	background-color: #DAD9FF;
+	background-color: #EBF7FF;
 	color: #fff;
 	/* ffffff */
 	/* 255 -> ff */
@@ -44,7 +44,7 @@
 .left_panel {
 	padding-top: 30px;
 	padding-left: 10px;
-	width: 46%;
+	width: 40%;
 	height: 100%;
 	color: #ccc;
 	/* 	background-color: #80ffcc; */
@@ -72,7 +72,7 @@
 	margin-left: 15px;
 	padding: 10px 0;
 	border-radius: 4px;
-	background-color: #8080ff;
+	background-color: #EBF7FF;
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -80,14 +80,14 @@
 .right_panel {
 	padding-top: 30px;
 	padding-left: 10px;
-	width: 46%;
+	width: 60%;
 	height: 100%;
 	color: #ccc;
 	/* 	background-color: #80ffcc; */
 }
 
 .right_panel>div {
-	width: 80%;
+	width: 100%;
 	margin: 20px auto;
 	/* 	background-color: #80ff80; */
 }
@@ -108,7 +108,7 @@
 	margin-left: 15px;
 	padding: 10px 0;
 	border-radius: 4px;
-	background-color: #8080ff;
+	background-color: #EBF7FF;
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -121,11 +121,14 @@ svg {
 }
 
 th, td {
-	padding: 15px;
+	padding: 5px;
 }
 
 table {
 	border-spacing: 10px;
+}
+.table-wrapper{
+margin-right:30px;
 }
 </style>
 <script
@@ -133,12 +136,11 @@ table {
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-
+<% String storename= request.getParameter("title"); %>
 	<div class="container">
 		<div class="left_panel">
 			별점 그래프<br>
 			<svg id="myGraph1"></svg>
-			<button type="button" id="barbtn">update</button>
 			<script src="./barjson.js"></script>
 		</div>
 		<div class="right_panel">
@@ -147,10 +149,11 @@ table {
 				<table class="table-wrapper">
 					<thead>
 						<tr>
-							<th>글번호</th>
-							<th>제목</th>
-							<th>작성날짜</th>
-							<th>작성자</th>
+							<th>가게명</th>
+							<th>닉네임</th>
+							<th>후기</th>
+							<th>작성일</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -160,8 +163,18 @@ table {
 								<td>${dto.nickname }</td>
 								<td>${dto.content }</td>
 								<td>${dto.wdate }</td>
+								<td></td>
 							</tr>
 						</c:forEach>
+						<tr>
+						<form action="evaldb">
+							<td><%=storename %></td><input type="hidden" name="title" value=<%=storename%>>
+							<td>${dto.nickname }</td><input type="hidden" name="name" value="hello"/>
+							<td><input type="text" name="content" placeholder="후기를 입력하세요"></td>
+							<td><input type="text" name="wdate" placeholder="오늘 날짜"></td>
+							<td><input type="submit" value="등록하기"></td>
+							</tr>
+						</form>
 					</tbody>
 				</table>
 			</div>

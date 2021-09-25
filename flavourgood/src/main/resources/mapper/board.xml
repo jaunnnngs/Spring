@@ -6,23 +6,17 @@
 
 <mapper namespace="board">
 	<select id="selectlist"
+		parameterType="com.my.reviewflavour.Dto.BoardDto"
 		resultType="com.my.reviewflavour.Dto.BoardDto">
-		select * from stunboard title=#{title}
+		select * from stunboard where title=#{title}
 	</select>
-	<!-- <insert id="insert" parameterType="com.my.reviewflavour.Dto.BoardDto">
-		INSERT INTO my.board (title,
-		name, content, wdate, hits) VALUES (#{title},#{name},#{content}
-		,#{wdate},#{hits});
-	</insert> -->
-	<!-- <update id="update" parameterType="com.my.chart.dto.BoardDto">
-		update member
-		set id=#{id},
-		pw=#{pw}, age=#{age}, gender= #{gender}
-		where idx=#{idx}
-	</update>
-	<delete id="delete" parameterType="int">
-		delete FROM member where
-		idx=#{idx}
-	</delete> -->
+	 <insert id="insert" parameterType="com.my.reviewflavour.Dto.BoardDto"
+	 > 
+		INSERT INTO stunboard (title, nickname, content, wdate) VALUES (#{title},#{name},#{content} 
+		,#{wdate}) </insert>
+	<!-- <update id="update" parameterType="com.my.chart.dto.BoardDto"> update 
+		member set id=#{id}, pw=#{pw}, age=#{age}, gender= #{gender} where idx=#{idx} 
+		</update> <delete id="delete" parameterType="int"> delete FROM member where 
+		idx=#{idx} </delete> -->
 </mapper>
 
