@@ -10,9 +10,8 @@
 		resultType="com.my.reviewflavour.Dto.BoardDto">
 		select * from stunboard where title=#{title}
 	</select>
-	 <insert id="insert" parameterType="com.my.reviewflavour.Dto.BoardDto"
-	 > 
-		INSERT INTO stunboard (title, nickname, content, wdate) VALUES (#{title},#{name},#{content} 
+	 <insert id="insert" parameterType="com.my.reviewflavour.Dto.BoardDto"> 
+		INSERT INTO stunboard (title, nickname, content, wdate) VALUES (#{title},#{nickname},#{content} 
 		,#{wdate}) </insert>
 	<!-- <update id="update" parameterType="com.my.chart.dto.BoardDto"> update 
 		member set id=#{id}, pw=#{pw}, age=#{age}, gender= #{gender} where idx=#{idx} 

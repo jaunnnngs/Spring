@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>평가</title>
 <style>
 @charset "UTF-8";
 
@@ -44,7 +44,7 @@
 .left_panel {
 	padding-top: 30px;
 	padding-left: 10px;
-	width: 40%;
+	width: 20%;
 	height: 100%;
 	color: #ccc;
 	/* 	background-color: #80ffcc; */
@@ -80,7 +80,7 @@
 .right_panel {
 	padding-top: 30px;
 	padding-left: 10px;
-	width: 60%;
+	width: 80%;
 	height: 100%;
 	color: #ccc;
 	/* 	background-color: #80ffcc; */
@@ -114,14 +114,15 @@
 }
 
 svg {
-	width: 340px;
-	height: 370px;
+	width: 200px;
+	height: 200px;
 	border: 1px solid black;
 	margin-left: 20px;
 }
 
 th, td {
-	padding: 5px;
+width:200px;
+	padding: 0px;
 }
 
 table {
@@ -167,9 +168,9 @@ margin-right:30px;
 							</tr>
 						</c:forEach>
 						<tr>
-						<form action="evaldb">
+						<form action="evaldb" method="post">					
 							<td><%=storename %></td><input type="hidden" name="title" value=<%=storename%>>
-							<td>${dto.nickname }</td><input type="hidden" name="name" value="hello"/>
+							<td><input type="text" name="nickname" placeholder="등록하실 닉네임"></td>
 							<td><input type="text" name="content" placeholder="후기를 입력하세요"></td>
 							<td><input type="text" name="wdate" placeholder="오늘 날짜"></td>
 							<td><input type="submit" value="등록하기"></td>
