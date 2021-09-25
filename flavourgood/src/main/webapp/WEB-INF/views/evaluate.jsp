@@ -142,7 +142,7 @@ margin-right:30px;
 		<div class="left_panel">
 			별점 그래프<br>
 			<svg id="myGraph1"></svg>
-			<script src="./barjson.js"></script>
+			<script src="/reviewflavour/resources/barjson.js"></script>
 		</div>
 		<div class="right_panel">
 			<div class="right_panel_main">
