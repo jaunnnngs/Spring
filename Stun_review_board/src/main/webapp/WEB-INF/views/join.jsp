@@ -20,130 +20,102 @@
 
 </head>
 <body>
-	<form action="joinaction" method="post">
-		<%
-		// 현재 세션 상태를 체크한다
-		String userID = null;
-		if (session.getAttribute("id") != null) {
-			userID = (String) session.getAttribute("id");
-		}
-		%>
 
-		<!-- Responsive navbar-->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div class="container px-5">
-				<a class="navbar-brand" href="notice">STUN</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<%
-					// 로그인 하지 않았을 때 보여지는 화면
-					if (userID == null) {
-					%>
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index">로그인</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="stun">공지사항</a></li>
 
-					</ul>
-					<%
-					// 로그인이 되어 있는 상태에서 보여주는 화면
-					} else {
-					%>
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="index">로그아웃</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="notice">공지사항</a></li>
-					</ul>
-					<%
-					}
-					%>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container px-5">
+			<a class="navbar-brand" href="main">STUN</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="index">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
+
+				</ul>
+				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
+
+			</div>
+		</div>
+	</nav>
+	<!-- 회원가입 섹션-->
+	<section class="bg-light py-5">
+		<div class="container px-5 my-5 px-5">
+			<div class="text-center mb-5">
+				<h2 class="fw-bolder">STUN 에 오신 것을 환영합니다!</h2>
+				<p class="lead mb-0">회원가입을 시작하겠습니다.</p>
+			</div>
+			<div class="row gx-5 justify-content-center">
+				<div class="col-lg-6">
+					<form action="joinaction" method="post">
+
+						<!-- NickName input-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="nickname" id="nickname"
+								type="text" placeholder="Enter your nickname..."
+								data-sb-validations="required" /> <label for="nickname">닉네임</label>
+							<div class="invalid-feedback" data-sb-feedback="name:required">A
+								nickname is required.</div>
+						</div>
+						<!-- Name input-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="name" id="name" type="text"
+								placeholder="Enter your name..." data-sb-validations="required" />
+							<label for="name">이름</label>
+							<div class="invalid-feedback" data-sb-feedback="name:required">A
+								name is required.</div>
+						</div>
+						<!-- 아이디 입력-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="id" id="id" type="text"
+								placeholder="Enter your ID..." data-sb-validations="required" />
+							<label for="id">아이디</label>
+							<div class="invalid-feedback" data-sb-feedback="userID:required">A
+								userID is required.</div>
+						</div>
+						<!-- 비번 입력-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="pw" id="pw" type="password"
+								placeholder="Enter your password..."
+								data-sb-validations="required,email" /> <label for="pw">비밀번호</label>
+							<div class="invalid-feedback"
+								data-sb-feedback="password:required">A password is
+								required.</div>
+							<div class="invalid-feedback"
+								data-sb-feedback="password:password">Password is not
+								valid.</div>
+						</div>
+
+
+						<!-- 제출 성공시 뜨는 메세지-->
+						<div class="d-none" id="submitSuccessMessage">
+							<div class="text-center mb-3">
+								<div class="fw-bolder">Form submission successful!</div>
+								To activate this form, sign up at <br /> <a
+									href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+							</div>
+						</div>
+						<!-- 제출 에러 메세지-->
+						<div class="d-none" id="submitErrorMessage">
+							<div class="text-center text-danger mb-3">Error sending
+								message!</div>
+						</div>
+						<!--마지막 버튼!  -->
+						<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+							<input class="btn btn-outline-primary" type="submit" value="회원가입">
+							<input class="btn btn-outline-primary" type="reset" value="다시입력">
+						</div>
+					</form>
 				</div>
 			</div>
-		</nav>
-		<!-- 회원가입 섹션-->
-		<section class="bg-light py-5">
-			<div class="container px-5 my-5 px-5">
-				<div class="text-center mb-5">
-					<h2 class="fw-bolder">STUN 에 오신 것을 환영합니다!</h2>
-					<p class="lead mb-0">회원가입을 시작하겠습니다.</p>
-				</div>
-				<div class="row gx-5 justify-content-center">
-					<div class="col-lg-6">
-						<form id="contactForm" data-sb-form-api-token="API_TOKEN">
-
-							<!-- NickName input-->
-							<div class="form-floating mb-3">
-								<input class="form-control" name="nickname" id="nickname"
-									type="text" placeholder="Enter your nickname..."
-									data-sb-validations="required" /> <label for="nickname">닉네임</label>
-								<div class="invalid-feedback" data-sb-feedback="name:required">A
-									nickname is required.</div>
-							</div>
-							<!-- Name input-->
-							<div class="form-floating mb-3">
-								<input class="form-control" name="name" id="name" type="text"
-									placeholder="Enter your name..." data-sb-validations="required" />
-								<label for="name">이름</label>
-								<div class="invalid-feedback" data-sb-feedback="name:required">A
-									name is required.</div>
-							</div>
-							<!-- 아이디 입력-->
-							<div class="form-floating mb-3">
-								<input class="form-control" name="id" id="id" type="text"
-									placeholder="Enter your ID..." data-sb-validations="required" />
-								<label for="id">아이디</label>
-								<div class="invalid-feedback" data-sb-feedback="userID:required">A
-									userID is required.</div>
-							</div>
-							<!-- 비번 입력-->
-							<div class="form-floating mb-3">
-								<input class="form-control" name="pw" id="pw"
-									type="password" placeholder="Enter your password..."
-									data-sb-validations="required,email" /> <label
-									for="pw">비밀번호</label>
-								<div class="invalid-feedback"
-									data-sb-feedback="password:required">A password is
-									required.</div>
-								<div class="invalid-feedback"
-									data-sb-feedback="password:password">Password is not
-									valid.</div>
-							</div>
-
-
-							<!-- 제출 성공시 뜨는 메세지-->
-							<div class="d-none" id="submitSuccessMessage">
-								<div class="text-center mb-3">
-									<div class="fw-bolder">Form submission successful!</div>
-									To activate this form, sign up at <br /> <a
-										href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-								</div>
-							</div>
-							<!-- 제출 에러 메세지-->
-							<div class="d-none" id="submitErrorMessage">
-								<div class="text-center text-danger mb-3">Error sending
-									message!</div>
-							</div>
-							<!--마지막 버튼!  -->
-							<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-								<input class="btn btn-outline-primary" type="submit"
-									value="회원가입"> <input class="btn btn-outline-primary"
-									type="reset" value="다시입력">
-							</div>
-
-						</form>
-
-					</div>
-				</div>
-			</div>
-		</section>
-	</form>
+		</div>
+	</section>
 
 	<!-- 하단화면-->
 

@@ -36,14 +36,14 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
+						
 						<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 					</ul>
+					<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
 				</div>
 			</div>
 		</nav>
 	</form>
-	<div>${sessionScope.dto.id}님환영합니다.</div>
 	<div class="container1">
 		<div class="item" style="margin: 0 auto">
 			<form action="logincheck" method="post">

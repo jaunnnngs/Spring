@@ -62,6 +62,4 @@ public class BoardDTO {
 	public void setHits(int hits) {
 		this.hits = hits;
 	}
-	
-	
 }
