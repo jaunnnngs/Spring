@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<select id="loginchk"
+		parameterType="com.my.reviewflavour.Dto.MemberDto"
+		resultType="com.my.reviewflavour.Dto.MemberDto">
+		select * from stunmember where id=#{id} and pw=#{pw}
+		limit 0,1
+
+	</select>
+
+	<insert id="joinchk"
+		parameterType="com.my.reviewflavour.Dto.MemberDto">
+		insert into stunmember
+		(name,id,pw,nickname)
+		values
+		(#{name},#{id},#{pw},#{nickname})
+	</insert>
+
+</mapper>
+
