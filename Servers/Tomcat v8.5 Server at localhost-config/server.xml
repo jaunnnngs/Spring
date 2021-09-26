@@ -17,15 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
-<<<<<<< HEAD
-<<<<<<< HEAD
- --><Server port="8005" shutdown="SHUTDOWN">
-=======
- --><Server port="8011" shutdown="SHUTDOWN">
->>>>>>> minyoung
-=======
- --><Server port="8012" shutdown="SHUTDOWN">
->>>>>>> jaunnnngs
+ --><Server port="8010" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -68,15 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
-=======
-    <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
->>>>>>> minyoung
-=======
-    <Connector connectionTimeout="20000" port="8281" protocol="HTTP/1.1" redirectPort="8443"/>
->>>>>>> jaunnnngs
+    <Connector connectionTimeout="20000" port="8282" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -169,15 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <Context docBase="flavourgood" path="/reviewflavour" reloadable="true" source="org.eclipse.jst.jee.server:flavourgood"/><Context docBase="chart_0827" path="/chart" reloadable="true" source="org.eclipse.jst.jee.server:chart_0827"/></Host>
-=======
-      <Context docBase="flavourgood" path="/reviewflavour" reloadable="true" source="org.eclipse.jst.jee.server:flavourgood"/><Context docBase="chart_0827" path="/chart" reloadable="true" source="org.eclipse.jst.jee.server:chart_0827"/><Context docBase="chart_0827" path="/chart" reloadable="true" source="org.eclipse.jst.jee.server:chart_0827"/></Host>
->>>>>>> minyoung
-=======
-      <Context docBase="Stun_review_board" path="/Stun_review_board" reloadable="true" source="org.eclipse.jst.jee.server:Stun_review_board"/></Host>
->>>>>>> jaunnnngs
+      <Context docBase="Stun_review_board" path="/review_board" reloadable="true" source="org.eclipse.jst.jee.server:Stun_review_board"/><Context docBase="flavourgood" path="/reviewflavour" reloadable="true" source="org.eclipse.jst.jee.server:flavourgood"/></Host>
     </Engine>
   </Service>
 </Server>
