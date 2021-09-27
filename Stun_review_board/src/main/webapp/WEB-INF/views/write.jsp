@@ -110,12 +110,11 @@
 		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
-
-	<script src="/Stun_review_board/resources/assets/js/jquery.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/browser.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/breakpoints.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/util.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/main.js"></script>
+	<script src="/Stun_review_board/resources/js/jquery.min.js"></script>
+	<script src="/Stun_review_board/resources/js/browser.min.js"></script>
+	<script src="/Stun_review_board/resources/js/breakpoints.min.js"></script>
+	<script src="/Stun_review_board/resources/js/util.js"></script>
+	<script src="/Stun_review_board/resources/js/main.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->

@@ -1,3 +1,4 @@
+<%@page import="com.stun.review_board.dto.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -52,14 +53,15 @@
 					<header>
 						<h2>수정하기</h2>
 					</header>
-					
-				
+
+
 					<form action="updateaction" method="post">
+						<input type="hidden" name="idx" value="${param.idx}"> <!--지정된 idx 불러오기  -->
 						<!-- title input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="title" id="title" type="text"
-								placeholder="title..." data-sb-validations="required"/> <label
-								for="title">제목</label>
+								placeholder="title..." data-sb-validations="required" /> <label
+								for="title"></label>
 							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
 						</div>
 						<!-- content input-->
@@ -112,11 +114,11 @@
 		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
-	<script src="/Stun_review_board/resources/assets/js/jquery.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/browser.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/breakpoints.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/util.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/main.js"></script>
+	<script src="/Stun_review_board/resources/js/jquery.min.js"></script>
+	<script src="/Stun_review_board/resources/js/browser.min.js"></script>
+	<script src="/Stun_review_board/resources/js/breakpoints.min.js"></script>
+	<script src="/Stun_review_board/resources/js/util.js"></script>
+	<script src="/Stun_review_board/resources/js/main.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->

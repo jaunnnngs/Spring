@@ -22,7 +22,7 @@ public class BoardController {
 
 	@Autowired
 	SqlSession sqlsession;
-	
+
 	@RequestMapping(value = "/join")
 	public String join(Locale locale, Model model) {
 		return "join";
@@ -38,24 +38,25 @@ public class BoardController {
 		return "index";
 	}
 
-	
 	@RequestMapping(value = "/write")
 	public String write(Locale locale, Model model) {
 		model.addAttribute("msg", "게시판 글쓰기로 이동합니다.");
 		return "write";
 	}
-	
+
 	@RequestMapping(value = "/update")
 	public String update(Locale locale, Model model) {
 		return "update";
+		
 	}
+
 	@RequestMapping(value = "/alert")
 	public String alert(Locale locale, Model model) {
 		return "alert";
 	}
 
 	@RequestMapping(value = "/writeaction", produces = "text/html; charset=UTF-8")
-	public String writeaction(Model model,BoardDTO dto) {
+	public String writeaction(Model model, BoardDTO dto) {
 		sqlsession.insert("board.insert", dto);
 		model.addAttribute("msg", "글쓰기 성공");
 		model.addAttribute("url", "/notice");
@@ -63,16 +64,15 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/updateaction", produces = "text/html; charset=UTF-8")
-	public String updateaction(Locale locale, Model model,BoardDTO dto) {
+	public String updateaction(Locale locale, Model model, BoardDTO dto) {
 		sqlsession.update("board.update", dto);
-		model.addAttribute(dto);
 		model.addAttribute("msg", "업데이트 성공");
-		model.addAttribute("url", "/noitce");
+		model.addAttribute("url", "/main");
 		return "alert";
 	}
-	
+
 	@RequestMapping(value = "/deleteaction")
-	public String deleteaction(Model model,int idx) {
+	public String deleteaction(Model model, int idx) {
 		sqlsession.delete("board.delete", idx);
 		model.addAttribute("msg", "삭제 성공");
 		model.addAttribute("url", "/notice");
