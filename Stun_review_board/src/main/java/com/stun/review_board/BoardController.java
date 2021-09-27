@@ -64,15 +64,15 @@ public class BoardController {
 
 	@RequestMapping(value = "/updateaction", produces = "text/html; charset=UTF-8")
 	public String updateaction(Locale locale, Model model,BoardDTO dto) {
-		sqlsession.insert("board.update", dto);
+		sqlsession.update("board.update", dto);
 		model.addAttribute("msg", "업데이트 성공");
 		model.addAttribute("url", "/noitce");
 		return "alert";
 	}
 	
 	@RequestMapping(value = "/deleteaction")
-	public String deleteaction(Locale locale, Model model,BoardDTO dto) {
-		sqlsession.insert("board.delete", dto);
+	public String deleteaction(Locale locale, Model model,int idx) {
+		sqlsession.delete("board.delete", idx);
 		model.addAttribute("msg", "삭제 성공");
 		model.addAttribute("url", "/notice");
 		return "alert";

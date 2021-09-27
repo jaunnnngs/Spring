@@ -17,10 +17,9 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
 <link rel="stylesheet" href="resources/css/styles.css">
-<!-- <link rel="stylesheet"
-	href="/Stun_review_board/resources/assets/css/fontawesome-all.min.css" /> -->
 <link rel="stylesheet"
-	href="/Stun_review_board/resources/assets/css/main.css" />
+	href="/Stun_review_board/resources/css/fontawesome-all.min.css" />
+<link rel="stylesheet" href="/Stun_review_board/resources/css/main.css" />
 </head>
 <body>
 	<!-- Responsive navbar-->
@@ -76,6 +75,8 @@
 									<td>${dto.nickname}</td>
 									<td>${dto.wtime}</td>
 									<td>${dto.hits}</td>
+									<td><a href="update?idx=${dto.idx}">수정</a></td>
+									<td><a href="deleteaction?idx=${dto.idx}">삭제</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -93,12 +94,11 @@
 		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
-
-	<script src="/Stun_review_board/resources/assets/js/jquery.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/browser.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/breakpoints.min.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/util.js"></script>
-	<script src="/Stun_review_board/resources/assets/js/main.js"></script>
+	<script src="/Stun_review_board/resources/js/jquery.min.js"></script>
+	<script src="/Stun_review_board/resources/js/browser.min.js"></script>
+	<script src="/Stun_review_board/resources/js/breakpoints.min.js"></script>
+	<script src="/Stun_review_board/resources/js/util.js"></script>
+	<script src="/Stun_review_board/resources/js/main.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->

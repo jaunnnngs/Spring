@@ -16,14 +16,14 @@
 	</insert>
 	<update id="update"
 		parameterType="com.stun.review_board.dto.BoardDTO">
-		update member
-		set nickname=#{nickname},
-		name=#{name},
-		id=#{id}, pw=#{pw},
+		update board
+		set title=#{title},
+		content=#{content},
+		nickname=#{nickname}, wtime=#{wtime}, hits=#{hits}
 		where idx=#{idx}
 	</update>
 	<delete id="delete" parameterType="int">
-		delete from member where idx =
+		delete from board where idx =
 		#{idx}
 	</delete>
 </mapper>

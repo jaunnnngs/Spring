@@ -66,20 +66,52 @@
 								<th>조회수</th>
 							</tr>
 						</thead>
-
-						<tbody>
-							<c:forEach items="${list}" var="dto">
-								<tr>
-									<td><c:if test="${dto.idx ne '0'}">${dto.idx}</c:if></td>
-									<td><a href="">${dto.title}</a></td>
-									<td>${dto.content}</td>
-									<td>${dto.nickname}</td>
-									<td>${dto.wtime}</td>
-									<td>${dto.hits}</td>
-								</tr>
-							</c:forEach>
-						</tbody>
 					</table>
+					<form action="updateaction" method="post">
+						<!-- title input-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="title" id="title" type="text"
+								placeholder="title..." data-sb-validations="required" /> <label
+								for="title">제목</label>
+							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
+						</div>
+						<!-- content input-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="content" id="content"
+								type="text" placeholder="content..."
+								data-sb-validations="required" /> <label for="content">내용</label>
+							<div class="invalid-feedback" data-sb-feedback="content:required">content</div>
+						</div>
+						<!-- nickname input-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="nickname" id="nickname"
+								type="text" placeholder="Enter your nickname..."
+								data-sb-validations="required" /> <label for="nickname">닉네임</label>
+							<div class="invalid-feedback"
+								data-sb-feedback="nickname:required">nickname</div>
+						</div>
+						<!-- date 입력-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="wtime" id="wtime" type="text"
+								placeholder="wtime..." data-sb-validations="required" /> <label
+								for="wtime">날짜</label>
+							<div class="invalid-feedback" data-sb-feedback="wtime:required">wtime</div>
+						</div>
+
+						<!-- hits 입력-->
+						<div class="form-floating mb-3">
+							<input class="form-control" name="hits" id="hits" type="text"
+								placeholder="hits..." data-sb-validations="required" /> <label
+								for="hits">hits</label>
+							<div class="invalid-feedback" data-sb-feedback="hits:required">hits</div>
+						</div>
+
+						<!--마지막 버튼!  -->
+						<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+							<input class="btn btn-outline-primary" type="submit" value="저장">
+							<input class="btn btn-outline-primary" type="reset" value="다시입력">
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -93,7 +125,6 @@
 		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
-
 	<script src="/Stun_review_board/resources/assets/js/jquery.min.js"></script>
 	<script src="/Stun_review_board/resources/assets/js/browser.min.js"></script>
 	<script src="/Stun_review_board/resources/assets/js/breakpoints.min.js"></script>
