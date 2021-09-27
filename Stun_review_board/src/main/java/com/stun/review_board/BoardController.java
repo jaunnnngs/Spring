@@ -55,7 +55,7 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/writeaction", produces = "text/html; charset=UTF-8")
-	public String writeaction(Locale locale, Model model,BoardDTO dto) {
+	public String writeaction(Model model,BoardDTO dto) {
 		sqlsession.insert("board.insert", dto);
 		model.addAttribute("msg", "글쓰기 성공");
 		model.addAttribute("url", "/notice");
@@ -65,13 +65,14 @@ public class BoardController {
 	@RequestMapping(value = "/updateaction", produces = "text/html; charset=UTF-8")
 	public String updateaction(Locale locale, Model model,BoardDTO dto) {
 		sqlsession.update("board.update", dto);
+		model.addAttribute(dto);
 		model.addAttribute("msg", "업데이트 성공");
 		model.addAttribute("url", "/noitce");
 		return "alert";
 	}
 	
 	@RequestMapping(value = "/deleteaction")
-	public String deleteaction(Locale locale, Model model,int idx) {
+	public String deleteaction(Model model,int idx) {
 		sqlsession.delete("board.delete", idx);
 		model.addAttribute("msg", "삭제 성공");
 		model.addAttribute("url", "/notice");
