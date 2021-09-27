@@ -71,7 +71,7 @@
 						<!-- title input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="title" id="title" type="text"
-								placeholder="title..." data-sb-validations="required" /> <label
+								placeholder="title..." data-sb-validations="required" value="${dto.title}"/> <label
 								for="title">제목</label>
 							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
 						</div>

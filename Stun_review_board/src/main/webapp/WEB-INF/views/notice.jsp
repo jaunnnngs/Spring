@@ -70,7 +70,7 @@
 							<c:forEach items="${list}" var="dto">
 								<tr>
 									<td><c:if test="${dto.idx ne '0'}">${dto.idx}</c:if></td>
-									<td><a href="update">${dto.title}</a></td>
+									<td>${dto.title}</td>
 									<td>${dto.content}</td>
 									<td>${dto.nickname}</td>
 									<td>${dto.wtime}</td>
