@@ -50,23 +50,10 @@
 			<div class="row gx-5 justify-content-center">
 				<div class="col-lg-6">
 					<header>
-						<h2>공지사항</h2>
+						<h2>수정하기</h2>
 					</header>
-					<div>
-						<a href="write">글쓰기</a>
-					</div>
-					<table class="table-wrapper">
-						<thead>
-							<tr>
-								<th>글번호</th>
-								<th>제목</th>
-								<th>내용</th>
-								<th>작성자</th>
-								<th>작성날짜</th>
-								<th>조회수</th>
-							</tr>
-						</thead>
-					</table>
+					
+				
 					<form action="updateaction" method="post">
 						<!-- title input-->
 						<div class="form-floating mb-3">

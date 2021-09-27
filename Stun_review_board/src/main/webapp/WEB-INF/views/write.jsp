@@ -51,24 +51,6 @@
 						<h2>글쓰기</h2>
 					</header>
 
-					<div>
-						<a href="update">수정</a>
-					</div>
-					<div>
-						<a href="delete">삭제</a>
-					</div>
-					<table class="table-wrapper">
-						<thead>
-							<tr>
-								<th>글번호</th>
-								<th>제목</th>
-								<th>내용</th>
-								<th>작성자</th>
-								<th>작성날짜</th>
-								<th>조회수</th>
-							</tr>
-						</thead>
-					</table>
 					<form action="writeaction" method="post">
 						<!-- title input-->
 						<div class="form-floating mb-3">
