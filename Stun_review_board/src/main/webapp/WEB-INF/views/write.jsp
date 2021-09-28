@@ -54,8 +54,7 @@
 					String storename = request.getParameter("title");
 					%>
 					<form action="writeaction" method="post">
-						<h2><td><%=storename%></td> <input type="hidden" name="title"
-							value=<%=storename%>></h2>
+						<h2><td><%=storename%></td></h2>
 						<!-- title input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="title" id="title" value=<%=storename%> type="text"
