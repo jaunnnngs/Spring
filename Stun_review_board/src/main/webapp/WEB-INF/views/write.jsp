@@ -50,11 +50,15 @@
 					<header>
 						<h2>글쓰기</h2>
 					</header>
-
+					<%
+					String storename = request.getParameter("title");
+					%>
 					<form action="writeaction" method="post">
+						<td><%=storename%></td> <input type="hidden" name="title"
+							value=<%=storename%>>
 						<!-- title input-->
 						<div class="form-floating mb-3">
-							<input class="form-control" name="title" id="title" type="text"
+							<input class="form-control" name="title" id="title" value=<%=storename%> type="text"
 								placeholder="title..." data-sb-validations="required" /> <label
 								for="title">제목</label>
 							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
@@ -81,7 +85,7 @@
 								for="wtime">날짜</label>
 							<div class="invalid-feedback" data-sb-feedback="wtime:required">wtime</div>
 						</div>
-						
+
 						<!-- hits 입력-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="hits" id="hits" type="text"

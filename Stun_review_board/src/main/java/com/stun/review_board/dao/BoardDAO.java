@@ -19,4 +19,9 @@ public class BoardDAO {
 		return list;
 	}
 	
+	public List<BoardDTO> insertlist(BoardDTO dto)
+	{
+		List<BoardDTO> boardlist= sqlsession.selectList("board.insert",dto);
+		return boardlist;
+	}
 }

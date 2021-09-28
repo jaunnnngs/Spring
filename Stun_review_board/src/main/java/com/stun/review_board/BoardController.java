@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 import com.stun.review_board.dao.BoardDAO;
 import com.stun.review_board.dto.BoardDTO;
 import com.stun.review_board.dto.MemberDTO;
@@ -30,7 +31,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/main")
 	public String notice(Locale locale, Model model) {
-		return "main";
+		return "map";
 	}
 
 	@RequestMapping(value = "/index")
@@ -54,6 +55,14 @@ public class BoardController {
 	public String alert(Locale locale, Model model) {
 		return "alert";
 	}
+	
+	@RequestMapping(value = "/evaldb",method = { RequestMethod.POST,RequestMethod.GET})
+	public String evaldb(Model model, BoardDTO dto) {
+		List<BoardDTO> list= dao.insertlist(dto);
+		System.out.println(dto.getNickname());
+		model.addAttribute("list",list);
+		return "notice";
+	} 
 
 	@RequestMapping(value = "/writeaction", produces = "text/html; charset=UTF-8")
 	public String writeaction(Model model, BoardDTO dto) {
