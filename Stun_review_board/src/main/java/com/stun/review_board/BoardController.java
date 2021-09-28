@@ -31,7 +31,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/main")
 	public String notice(Locale locale, Model model) {
-		return "map";
+		return "main";
 	}
 
 	@RequestMapping(value = "/index")
