@@ -44,10 +44,10 @@
 	</nav>
 	<!-- 게시판 섹션-->
 	<section class="bg-light py-5">
-		<div class="container px-5 my-5 px-5">
-			<div class="text-center mb-5"></div>
-			<div class="row gx-5 justify-content-center">
-				<div class="col-lg-6">
+		<div class="container">
+			<div class="text-center"></div>
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
 					<header>
 						<h2>공지사항</h2>
 					</header>
@@ -72,8 +72,8 @@
 									<td>${dto.nickname}</td>
 									<td>${dto.wtime}</td>
 									<td>${dto.hits}</td>
-									<td><a href="update?idx=${dto.idx}">수정</a></td>
-									<td><a href="deleteaction?idx=${dto.idx}">삭제</a></td>
+									<td><a class="btn btn-outline-primary" href="update?idx=${dto.idx}">수정</a></td>
+									<td><a class="btn btn-outline-primary" href="deleteaction?idx=${dto.idx}">삭제</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>

@@ -194,7 +194,7 @@ table {
 						<c:forEach items="${list}" var="dto">
 							<tr>
 
-								<td>${dto.title}</td>
+								<td><c:out value="${dto.title}"></c:out></td>
 								<td>${dto.content}</td>
 								<td>${dto.nickname}</td>
 								<td>${dto.wtime}</td>

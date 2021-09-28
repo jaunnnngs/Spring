@@ -95,7 +95,7 @@
 
 						<!--마지막 버튼!  -->
 						<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-							<input class="btn btn-outline-primary" type="submit" value="저장">
+							<a class="btn btn-outline-primary" href="evaluate?idx=${dto.idx}">저장</a>
 							<input class="btn btn-outline-primary" type="reset" value="다시입력">
 						</div>
 					</form>

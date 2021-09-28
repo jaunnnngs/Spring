@@ -21,25 +21,25 @@
 
 </head>
 <body>
-		<!-- Responsive navbar-->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div class="container px-5">
-				<a class="navbar-brand" href="main">STUN</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+	<!-- Responsive navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container px-5">
+			<a class="navbar-brand" href="main">STUN</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-						<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
-					</ul>
-					<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
-				</div>
+					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
+				</ul>
+				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
 			</div>
-		</nav>
+		</div>
+	</nav>
 	<div class="container1">
 		<div class="item" style="margin: 0 auto">
 			<form action="logincheck" method="post">
@@ -58,14 +58,15 @@
 				<div>
 					<input type="text" name="pw">
 				</div>
-
+				<div><br></div>
 				<div>
-					<input type="submit" value="로그인">
+					<input class="btn btn-outline-primary" type="submit" value="로그인">
 				</div>
 				<div>${text}</div>
 			</form>
+			<br>
 			<div class="item">
-				<a class="link" href="join">회원가입</a>
+				<a class="btn btn-outline-primary" href="join">회원가입</a>
 			</div>
 		</div>
 	</div>
