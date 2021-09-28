@@ -47,15 +47,15 @@
 			<div class="text-center mb-5"></div>
 			<div class="row gx-5 justify-content-center">
 				<div class="col-lg-6">
-					<header>
+					<!-- <header>
 						<h2>글쓰기</h2>
-					</header>
+					</header> -->
 					<%
 					String storename = request.getParameter("title");
 					%>
 					<form action="writeaction" method="post">
-						<td><%=storename%></td> <input type="hidden" name="title"
-							value=<%=storename%>>
+						<h2><td><%=storename%></td> <input type="hidden" name="title"
+							value=<%=storename%>></h2>
 						<!-- title input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="title" id="title" value=<%=storename%> type="text"
