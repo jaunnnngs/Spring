@@ -15,7 +15,12 @@ public class BoardDAO {
 	SqlSession sqlsession;
 	
 	public List<BoardDTO> selectlist(){
-		List<BoardDTO> list = sqlsession.selectList("board.selectlist");
+		List<BoardDTO> list = sqlsession.selectList("board.selectlist1");//notice 보여주기
+		return list;
+	}
+	
+	public List<BoardDTO> boardselectlist(BoardDTO dto){
+		List<BoardDTO> list = sqlsession.selectList("board.selectlist2");//민영이 게시판
 		return list;
 	}
 	

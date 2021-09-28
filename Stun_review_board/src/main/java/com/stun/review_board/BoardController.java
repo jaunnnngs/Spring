@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.stun.review_board.dao.BoardDAO;
 import com.stun.review_board.dto.BoardDTO;
-import com.stun.review_board.dto.MemberDTO;
 
 @Controller
 public class BoardController {
@@ -50,25 +49,25 @@ public class BoardController {
 		return "update";
 		
 	}
-
+	
+	/*
+	 * @RequestMapping(value = "/evaluate") public String evaluate(Locale locale,
+	 * Model model) { return "evaluate";
+	 * 
+	 * }
+	 */
 	@RequestMapping(value = "/alert")
 	public String alert(Locale locale, Model model) {
 		return "alert";
 	}
 	
-	@RequestMapping(value = "/evaldb",method = { RequestMethod.POST,RequestMethod.GET})
-	public String evaldb(Model model, BoardDTO dto) {
-		List<BoardDTO> list= dao.insertlist(dto);
-		System.out.println(dto.getNickname());
-		model.addAttribute("list",list);
-		return "notice";
-	} 
+	
 
 	@RequestMapping(value = "/writeaction", produces = "text/html; charset=UTF-8")
 	public String writeaction(Model model, BoardDTO dto) {
 		sqlsession.insert("board.insert", dto);
 		model.addAttribute("msg", "글쓰기 성공");
-		model.addAttribute("url", "/notice");
+		model.addAttribute("url", "/evaluate");
 		return "alert";
 	}
 
@@ -97,6 +96,25 @@ public class BoardController {
 		}
 		model.addAttribute("list", list);
 		return "notice";
+	}
+	
+	@RequestMapping(value = "evaluate")
+	public String evaluate(Model model,BoardDTO dto ) {
+		List<BoardDTO> list = dao.boardselectlist(dto);
+		if (list.size() < 6) {
+			while (list.size() != 5)
+				list.add(new BoardDTO());
+		}
+		model.addAttribute("list", list);
+		return "evaluate";
+	}
+	
+	@RequestMapping(value = "/evaldb",method = { RequestMethod.POST,RequestMethod.GET})
+	public String evaldb(Model model, BoardDTO dto) {
+		List<BoardDTO> list= dao.insertlist(dto);
+//		System.out.println(dto.getNickname());
+		model.addAttribute("list",list);
+		return "evaluate";
 	}
 
 }
