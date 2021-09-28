@@ -51,9 +51,6 @@
 					<header>
 						<h2>공지사항</h2>
 					</header>
-					<div>
-						<a href="write">글쓰기</a>
-					</div>
 					<table class="table-wrapper">
 						<thead>
 							<tr>
