@@ -162,8 +162,10 @@ table {
 						</tr>
 					</thead>
 					<tbody>
+						<td><%=storename%></td>
 						<c:forEach items="${list}" var="dto">
 							<tr>
+							
 								<td>${dto.title}</td>
 								<td>${dto.content}</td>
 								<td>${dto.nickname}</td>

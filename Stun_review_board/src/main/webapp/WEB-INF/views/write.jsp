@@ -54,12 +54,14 @@
 					String storename = request.getParameter("title");
 					%>
 					<form action="writeaction" method="post">
-						<h2><td><%=storename%></td></h2>
+						<h2>
+							<td><%=storename%></td>
+						</h2>
 						<!-- title input-->
 						<div class="form-floating mb-3">
-							<input class="form-control" name="title" id="title" value=<%=storename%> type="text"
-								placeholder="title..." data-sb-validations="required" /> <label
-								for="title">제목</label>
+							<input class="form-control" name="title" id="title"
+								value=<%=storename%> type="text" placeholder="title..."
+								data-sb-validations="required" /> <label for="title">제목</label>
 							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
 						</div>
 						<!-- content input-->
@@ -96,7 +98,8 @@
 						<!--마지막 버튼!  -->
 						<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
 							<input class="btn btn-outline-primary" type="submit" value="저장">
-							<input class="btn btn-outline-primary" type="reset" value="다시입력">
+							<td><a href="evaluate?title=${dto.title}">저장2</a></td> <input
+								class="btn btn-outline-primary" type="reset" value="다시입력">
 						</div>
 					</form>
 

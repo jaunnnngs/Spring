@@ -13,20 +13,25 @@ public class BoardDAO {
 
 	@Autowired
 	SqlSession sqlsession;
-	
-	public List<BoardDTO> selectlist(){
-		List<BoardDTO> list = sqlsession.selectList("board.selectlist1");//notice 보여주기
+
+	public List<BoardDTO> selectlist() {
+		List<BoardDTO> list = sqlsession.selectList("board.selectlist1");// notice 보여주기
 		return list;
 	}
-	
-	public List<BoardDTO> boardselectlist(BoardDTO dto){
-		List<BoardDTO> list = sqlsession.selectList("board.selectlist2");//민영이 게시판
+
+	public List<BoardDTO> boardselectlist(BoardDTO dto) {
+		List<BoardDTO> list = sqlsession.selectList("board.selectlist2");// 민영이 게시판
 		return list;
 	}
-	
-	public List<BoardDTO> insertlist(BoardDTO dto)
-	{
-		List<BoardDTO> boardlist= sqlsession.selectList("board.insert",dto);
+
+	public List<BoardDTO> insertlist(BoardDTO dto) {
+		List<BoardDTO> boardlist = sqlsession.selectList("board.insert", dto);
 		return boardlist;
+	}
+
+//	조회수 구현해보기
+	public int boardhit(int hits) {
+		sqlsession.update("board.boardhit", hits);
+		return hits;
 	}
 }

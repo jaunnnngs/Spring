@@ -11,7 +11,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 
-<title>STUN 공지사항</title>
+<title>STUN 수정하기</title>
 
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <link
@@ -53,28 +53,36 @@
 					<header>
 						<h2>수정하기</h2>
 					</header>
-
+					<%
+					String storename = request.getParameter("title");
+					String contents = request.getParameter("content");
+					String nicknames = request.getParameter("nickname");
+					String wtimes = request.getParameter("wtime");
+					%>
 
 					<form action="updateaction" method="post">
-						<input type="hidden" name="idx" value="${param.idx}"> <!--지정된 idx 불러오기  -->
+						<!--지정된 idx 불러오기  -->
+						<input type="hidden" name="idx" value="${param.idx}">
+
 						<!-- title input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="title" id="title" type="text"
-								placeholder="title..." data-sb-validations="required" /> <label
-								for="title"></label>
+								value=<%=storename%> placeholder="title..."
+								data-sb-validations="required" /><label for="title">제목</label>
 							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
 						</div>
 						<!-- content input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="content" id="content"
-								type="text" placeholder="content..."
+								type="text" value=<%=contents%> placeholder="content..."
 								data-sb-validations="required" /> <label for="content">내용</label>
 							<div class="invalid-feedback" data-sb-feedback="content:required">content</div>
 						</div>
 						<!-- nickname input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="nickname" id="nickname"
-								type="text" placeholder="Enter your nickname..."
+								type="text" value=<%=nicknames%>
+								placeholder="Enter your nickname..."
 								data-sb-validations="required" /> <label for="nickname">닉네임</label>
 							<div class="invalid-feedback"
 								data-sb-feedback="nickname:required">nickname</div>
@@ -82,8 +90,8 @@
 						<!-- date 입력-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="wtime" id="wtime" type="text"
-								placeholder="wtime..." data-sb-validations="required" /> <label
-								for="wtime">날짜</label>
+								value=<%=wtimes%> placeholder="wtime..."
+								data-sb-validations="required" /> <label for="wtime">날짜</label>
 							<div class="invalid-feedback" data-sb-feedback="wtime:required">wtime</div>
 						</div>
 

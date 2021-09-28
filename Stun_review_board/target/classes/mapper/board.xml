@@ -26,6 +26,12 @@
 		nickname=#{nickname}, wtime=#{wtime}, hits=#{hits}
 		where idx=#{idx}
 	</update>
+	<update id="boardhit"
+		parameterType="int">
+		update board
+		set hits=hits+1
+		where idx=#{idx}
+	</update>
 	<delete id="delete" parameterType="int">
 		delete from board where idx =
 		#{idx}
