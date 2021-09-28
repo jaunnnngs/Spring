@@ -47,9 +47,7 @@
 			<div class="text-center mb-5"></div>
 			<div class="row gx-5 justify-content-center">
 				<div class="col-lg-6">
-					<!-- <header>
-						<h2>글쓰기</h2>
-					</header> -->
+
 					<%
 					String storename = request.getParameter("title");
 					%>
@@ -98,8 +96,7 @@
 						<!--마지막 버튼!  -->
 						<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
 							<input class="btn btn-outline-primary" type="submit" value="저장">
-							<td><a href="evaluate?title=${dto.title}">저장2</a></td> <input
-								class="btn btn-outline-primary" type="reset" value="다시입력">
+							<input class="btn btn-outline-primary" type="reset" value="다시입력">
 						</div>
 					</form>
 

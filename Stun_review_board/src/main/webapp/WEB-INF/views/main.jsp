@@ -29,7 +29,7 @@
 	height: 100%;
 	width: 100%;
 	/* r g b*/
-	background-color: #EBF7FF;
+	background-color: #f8f9fa;
 	color: #fff;
 	/* ffffff */
 	/* 255 -> ff */
@@ -43,7 +43,7 @@
 	justify-content: space-around;
 	width: 1200px;
 	height: 600px;
-	background-color: #DAD9FF;
+	background-color: #f8f9fa;
 }
 
 .container .middle {

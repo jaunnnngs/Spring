@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>평가</title>
+
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+	rel="stylesheet" />
+<link rel="stylesheet" href="resources/css/styles.css">
+<link rel="stylesheet"
+	href="/Stun_review_board/resources/assets/css/main.css" />
 <style>
 @charset "UTF-8";
 
@@ -24,7 +32,7 @@
 	height: 100%;
 	width: 100%;
 	/* r g b*/
-	background-color: #EBF7FF;
+	background-color: white;
 	color: #fff;
 	/* ffffff */
 	/* 255 -> ff */
@@ -138,6 +146,26 @@ table {
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
+	<!-- Responsive navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container1 px-5">
+			<a class="navbar-brand" href="main">STUN</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="index">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
+				</ul>
+				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
+			</div>
+		</div>
+	</nav>
 	<%
 	String storename = request.getParameter("title");
 	%>
@@ -165,7 +193,7 @@ table {
 						<td><%=storename%></td>
 						<c:forEach items="${list}" var="dto">
 							<tr>
-							
+
 								<td>${dto.title}</td>
 								<td>${dto.content}</td>
 								<td>${dto.nickname}</td>

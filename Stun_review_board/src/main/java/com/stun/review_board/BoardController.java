@@ -50,13 +50,6 @@ public class BoardController {
 
 	}
 
-	/*
-	 * @RequestMapping(value = "/evaluate") public String evaluate(Locale locale,
-	 * Model model) { return "evaluate";
-	 * 
-	 * }
-	 */
-
 	@RequestMapping(value = "/alert")
 	public String alert(Locale locale, Model model) {
 		return "alert";
