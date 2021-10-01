@@ -75,8 +75,6 @@ public class BoardController {
 			return "alert";
 		}
 	}
-	
-	
 
 	@RequestMapping(value = "/updateaction", produces = "text/html; charset=UTF-8")
 	public String updateaction(Model model, BoardDTO dto) {
@@ -94,6 +92,14 @@ public class BoardController {
 		return "alert";
 	}
 
+	@RequestMapping(value = "/boarddelete")
+	public String boarddelete(Model model, int idx) {
+		sqlsession.delete("board.boarddelete", idx);
+		model.addAttribute("msg", "삭제 성공");
+		model.addAttribute("url", "/notice");
+		return "alert";
+	}
+
 	@RequestMapping(value = "notice")
 	public String notice(Model model) {
 		List<BoardDTO> list = dao.selectlist();
@@ -104,18 +110,19 @@ public class BoardController {
 		model.addAttribute("list", list);
 		return "notice";
 	}
+
 	@RequestMapping(value = "/boardwrite", produces = "text/html; charset=UTF-8")
 	public String boardwrite(Model model, BoardDTO dto) {
 		if (dto.getTitle().equals("") || dto.getContent().equals("") || dto.getNickname().equals("")
 				|| dto.getWtime().equals("")) {
 			model.addAttribute("msg", "다시확인하세요");
-			model.addAttribute("url", "redirect:/board");
-			return "alert";
+			model.addAttribute("url", "/board");
+			return "redirect:/alert"; // alert 후, 전달된 url 파라미터로 이동시키지느 페이지
 		} else {
 			sqlsession.insert("board.boardinsert", dto);
 			model.addAttribute("msg", "글쓰기 성공");
 			model.addAttribute("url", "redirect:/board");
-			return "alert";
+			return "redirect:/alert"; // alert 후, 전달된 url 파라미터로 이동시키지느 페이지
 		}
 	}
 
