@@ -11,9 +11,8 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
-<link rel="stylesheet" href="resources/css/styles.css">
-<link rel="stylesheet"
-	href="/Stun_review_board/resources/assets/css/main.css" />
+<link rel="stylesheet" href="resources/css/evaluate.css">
+
 <style>
 @charset "UTF-8";
 
@@ -28,19 +27,6 @@
 	box-sizing: border-box;
 }
 
-#root, html, body {
-	height: 100%;
-	width: 100%;
-	/* r g b*/
-	background-color: white;
-	color: #fff;
-	/* ffffff */
-	/* 255 -> ff */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .container {
 	display: flex;
 	justify-content: space-around;
@@ -50,9 +36,9 @@
 }
 
 .left_panel {
-	padding-top: 30px;
-	padding-left: 10px;
-	width: 20%;
+	padding-top: 20%;
+	padding-left: 0px;
+	/* width: 20%; */
 	height: 100%;
 	color: #ccc;
 	/* 	background-color: #80ffcc; */
@@ -60,7 +46,7 @@
 
 .left_panel>div {
 	width: 80%;
-	margin: 20px auto;
+	margin: 0;
 	/* 	background-color: #80ff80; */
 }
 
@@ -86,7 +72,7 @@
 }
 
 .right_panel {
-	padding-top: 30px;
+	padding-top: 20%;
 	padding-left: 10px;
 	width: 80%;
 	height: 100%;
@@ -129,16 +115,16 @@ svg {
 }
 
 th, td {
-	width: 200px;
+	width: 80%;
 	padding: 0px;
 }
 
 table {
-	border-spacing: 10px;
+	border-spacing: 1%;
 }
 
 .table-wrapper {
-	margin-right: 30px;
+	margin-right: 3%;
 }
 </style>
 <script
@@ -147,8 +133,9 @@ table {
 </head>
 <body>
 	<!-- Responsive navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container1 px-5">
+	<nav style="position: fixed; top: 0em; width: 100%; height: 100px"
+		class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="px-5">
 			<a class="navbar-brand" href="main">STUN</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -158,8 +145,8 @@ table {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="index">로그인</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="index">로그인</a></li>
 					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 				</ul>
 				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
@@ -194,17 +181,18 @@ table {
 						<c:forEach items="${list}" var="dto">
 							<tr>
 
-								<td><c:out value="${dto.title}"></c:out></td>
+								<%-- 	<td>${dto.idx}</td> --%>
+								<td>${dto.title}</td>
 								<td>${dto.content}</td>
 								<td>${dto.nickname}</td>
 								<td>${dto.wtime}</td>
 								<td>${dto.hits}</td>
 							</tr>
 						</c:forEach>
-						<%-- <tr>
+						<tr>
 							<form action="evaldb" method="post">
 								<td><%=storename%></td>
-								<input type="hidden" name="title" value=<%=storename%>>
+								<td><input type="hidden" name="title" value=<%=storename%>></td>
 								<td><input type="text" name="content"
 									placeholder="후기를 입력하세요"></td>
 								<td><input type="text" name="nickname"
@@ -212,8 +200,8 @@ table {
 								<td><input type="text" name="wtime" placeholder="오늘 날짜"></td>
 								<td><input type="text" name="hits" placeholder="조회수"></td>
 								<td><input type="submit" value="등록하기"></td>
-ㄴ							</form>
-						</tr> --%>
+							</form>
+						</tr>
 					</tbody>
 				</table>
 			</div>

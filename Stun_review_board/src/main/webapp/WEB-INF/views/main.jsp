@@ -16,7 +16,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" href="resources/css/styles.css">
+<link rel="stylesheet" href="resources/css/main.css">
 <style>
 * {
 	font-family: 'Noto Sans KR', sans-serif;
@@ -24,12 +24,11 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
 #root, html, body {
 	height: 100%;
 	width: 100%;
 	/* r g b*/
-	background-color: #f8f9fa;
+	background-color: #fff;
 	color: #fff;
 	/* ffffff */
 	/* 255 -> ff */
@@ -41,9 +40,9 @@
 .container {
 	display: flex;
 	justify-content: space-around;
-	width: 1200px;
-	height: 600px;
-	background-color: #f8f9fa;
+	width: 1000px;
+	height: 500px;
+	background-color: #fff;
 }
 
 .container .middle {
@@ -246,20 +245,23 @@
 	color: #777;
 }
 
-.welcome {
-	position: absolute;
-	display: flex;
-	top: 170px;
-	width: 300px;
-	height: 30px;
-	font-size: 20px;
-	color: #000000;
+.welcome
+{
+position:absolute;
+display:flex;
+top:170px;
+width:300px;
+height:30px;
+font-size:20px;
+color:#000000;
 }
 </style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container1 px-5">
+	<!-- Responsive navbar-->
+	<nav style="position: fixed; top: 0em; width: 100%; height: 100px"
+		class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="px-5">
 			<a class="navbar-brand" href="main">STUN</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -268,19 +270,20 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="index">로그인</a></li>
-					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 
+					<li class="nav-item"><a class="nav-link" href="index">로그인</a></li>
+					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 				</ul>
 				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
-
 			</div>
 		</div>
 	</nav>
+
+
+
 	<div id="root">
+
 		<div class="container">
 
 			<div class="map_wrap">
@@ -514,7 +517,7 @@
 
 		// 인포윈도우에 장소명을 표시합니다
 		function displayInfowindow(marker, title) {
-			var content = '<form action="write" method="post">'
+			var content = '<form action="evaluate" method="post">'
 					+ '<input type="hidden" name="title" value="'
 					+ title
 					+ '"'
@@ -541,6 +544,9 @@
 			}
 		}
 	</script>
-
+	<div class="container2"
+		style="color: black; font: bolder; position: fixed; bottom: 10%; left:35%; width: 100%; ">
+		<h3>▲방문한 장소에 글을 남겨주세요.</h3>
+	</div>
 </body>
 </html>

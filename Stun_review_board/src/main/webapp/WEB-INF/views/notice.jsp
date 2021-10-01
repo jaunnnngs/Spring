@@ -72,8 +72,10 @@
 									<td>${dto.nickname}</td>
 									<td>${dto.wtime}</td>
 									<td>${dto.hits}</td>
-									<td><a class="btn btn-outline-primary" href="update?idx=${dto.idx}">수정</a></td>
-									<td><a class="btn btn-outline-primary" href="deleteaction?idx=${dto.idx}">삭제</a></td>
+									<td><a class="btn btn-outline-primary"
+										href="update?idx=${dto.idx}">수정</a></td>
+									<td><a class="btn btn-outline-primary"
+										href="deleteaction?idx=${dto.idx}">삭제</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
