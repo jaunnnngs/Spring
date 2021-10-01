@@ -24,8 +24,6 @@
 .table, tr {
 	border: 2px solid gray;
 }
-
-
 </style>
 </head>
 <body>
@@ -60,6 +58,9 @@
 				<div class="col-lg-8" style="width: 100%">
 					<header>
 						<h2>가게 게시판</h2>
+						<h4>
+							<td>가게이름 : <%=storename%></td>
+						</h4>
 					</header>
 					<table class="table-wrapper">
 						<thead>
@@ -74,7 +75,7 @@
 						</thead>
 
 						<tbody>
-							<td><%=storename%></td>
+
 							<c:forEach items="${list}" var="dto">
 								<tr>
 									<td><c:if test="${dto.idx ne '0'}">${dto.idx}</c:if></td>

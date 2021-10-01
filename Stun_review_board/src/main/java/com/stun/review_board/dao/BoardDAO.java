@@ -20,18 +20,18 @@ public class BoardDAO {
 	}
 
 	public List<BoardDTO> boardselectlist(BoardDTO dto) {
-		List<BoardDTO> list = sqlsession.selectList("board.selectlist2");// 민영이 게시판
+		List<BoardDTO> list = sqlsession.selectList("board.selectlist2",dto);// 민영이 게시판
 		return list;
 	}
 
 	public List<BoardDTO> insertlist(BoardDTO dto) {
-		List<BoardDTO> boardlist = sqlsession.selectList("board.insert", dto);
+		List<BoardDTO> boardlist = sqlsession.selectList("board.boardinsert", dto);
 		return boardlist;
 	}
 
 //	조회수 구현해보기
 	public int boardhit(int hits) {
-		sqlsession.update("board.boardhit", hits);
+		sqlsession.update("board.noticehit", hits);
 		return hits;
 	}
 }

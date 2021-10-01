@@ -76,20 +76,7 @@ public class BoardController {
 		}
 	}
 	
-	@RequestMapping(value = "/boardwrite", produces = "text/html; charset=UTF-8")
-	public String boardwrite(Model model, BoardDTO dto) {
-		if (dto.getTitle().equals("") || dto.getContent().equals("") || dto.getNickname().equals("")
-				|| dto.getWtime().equals("")) {
-			model.addAttribute("msg", "다시확인하세요");
-			model.addAttribute("url", "/write");
-			return "alert";
-		} else {
-			sqlsession.insert("board.boardinsert", dto);
-			model.addAttribute("msg", "글쓰기 성공");
-			model.addAttribute("url", "/board");
-			return "alert";
-		}
-	}
+	
 
 	@RequestMapping(value = "/updateaction", produces = "text/html; charset=UTF-8")
 	public String updateaction(Model model, BoardDTO dto) {
@@ -116,6 +103,20 @@ public class BoardController {
 		}
 		model.addAttribute("list", list);
 		return "notice";
+	}
+	@RequestMapping(value = "/boardwrite", produces = "text/html; charset=UTF-8")
+	public String boardwrite(Model model, BoardDTO dto) {
+		if (dto.getTitle().equals("") || dto.getContent().equals("") || dto.getNickname().equals("")
+				|| dto.getWtime().equals("")) {
+			model.addAttribute("msg", "다시확인하세요");
+			model.addAttribute("url", "redirect:/board");
+			return "alert";
+		} else {
+			sqlsession.insert("board.boardinsert", dto);
+			model.addAttribute("msg", "글쓰기 성공");
+			model.addAttribute("url", "redirect:/board");
+			return "alert";
+		}
 	}
 
 	@RequestMapping(value = "evaluate")

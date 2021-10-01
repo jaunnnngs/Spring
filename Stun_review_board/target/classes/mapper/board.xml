@@ -26,19 +26,22 @@
 	</update>
 	<update id="noticehit" parameterType="int">
 		update notice
-		set hits=hits+1
+		set
+		hits=hits+1
 		where idx=#{idx}
 	</update>
 	<delete id="noticedelete" parameterType="int">
-		delete from notice where idx =
+		delete from notice where
+		idx =
 		#{idx}
 	</delete>
 
 	<select id="selectlist2"
+		parameterType="com.stun.review_board.dto.BoardDTO"
 		resultType="com.stun.review_board.dto.BoardDTO">
 		select * from board where title=#{title}
 	</select>
-	
+
 	<insert id="boardinsert"
 		parameterType="com.stun.review_board.dto.BoardDTO">
 		INSERT INTO board
