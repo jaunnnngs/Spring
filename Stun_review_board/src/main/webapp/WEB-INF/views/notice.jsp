@@ -20,6 +20,11 @@
 <link rel="stylesheet"
 	href="/Stun_review_board/resources/css/fontawesome-all.min.css" />
 <link rel="stylesheet" href="/Stun_review_board/resources/css/main.css" />
+<style>
+.table, tr {
+	border: 2px solid gray;
+}
+</style>
 </head>
 <body>
 	<!-- Responsive navbar-->
@@ -51,11 +56,14 @@
 					<header>
 						<h2>공지사항</h2>
 					</header>
+					<div class="container" style="padding-left: 80%">
+						<a class="btn btn-outline-primary" href="write">글쓰기</a>
+					</div>
 					<table class="table-wrapper">
 						<thead>
 							<tr>
 								<th>글번호</th>
-								<th>가게이름</th>
+								<th>제목</th>
 								<th>내용</th>
 								<th>작성자</th>
 								<th>작성날짜</th>
@@ -66,7 +74,9 @@
 						<tbody>
 							<c:forEach items="${list}" var="dto">
 								<tr>
+								
 									<td><c:if test="${dto.idx ne '0'}">${dto.idx}</c:if></td>
+
 									<td>${dto.title}</td>
 									<td>${dto.content}</td>
 									<td>${dto.nickname}</td>

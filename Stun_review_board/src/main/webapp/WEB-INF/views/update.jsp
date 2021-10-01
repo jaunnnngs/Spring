@@ -53,12 +53,6 @@
 					<header>
 						<h2>수정하기</h2>
 					</header>
-					<%
-					String storename = request.getParameter("title");
-					String contents = request.getParameter("content");
-					String nicknames = request.getParameter("nickname");
-					String wtimes = request.getParameter("wtime");
-					%>
 
 					<form action="updateaction" method="post">
 						<!--지정된 idx 불러오기  -->
@@ -67,39 +61,40 @@
 						<!-- title input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="title" id="title" type="text"
-								value=<%=storename%> placeholder="title..."
-								data-sb-validations="required" /><label for="title">제목</label>
+								placeholder="title..." data-sb-validations="required" /><label
+								for="title">수정할 제목</label>
 							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
 						</div>
 						<!-- content input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="content" id="content"
-								type="text" value=<%=contents%> placeholder="content..."
-								data-sb-validations="required" /> <label for="content">내용</label>
+								type="text" placeholder="content..."
+								data-sb-validations="required" /> <label for="content">수정할
+								내용</label>
 							<div class="invalid-feedback" data-sb-feedback="content:required">content</div>
 						</div>
 						<!-- nickname input-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="nickname" id="nickname"
-								type="text" value=<%=nicknames%>
-								placeholder="Enter your nickname..."
-								data-sb-validations="required" /> <label for="nickname">닉네임</label>
+								type="text" placeholder="Enter your nickname..."
+								data-sb-validations="required" /> <label for="nickname">수정할
+								닉네임</label>
 							<div class="invalid-feedback"
 								data-sb-feedback="nickname:required">nickname</div>
 						</div>
 						<!-- date 입력-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="wtime" id="wtime" type="text"
-								value=<%=wtimes%> placeholder="wtime..."
-								data-sb-validations="required" /> <label for="wtime">날짜</label>
+								placeholder="wtime..." data-sb-validations="required" /> <label
+								for="wtime">수정할 날짜</label>
 							<div class="invalid-feedback" data-sb-feedback="wtime:required">wtime</div>
 						</div>
 
 						<!-- hits 입력-->
 						<div class="form-floating mb-3">
 							<input class="form-control" name="hits" id="hits" type="text"
-								placeholder="hits..." data-sb-validations="required" /> <label
-								for="hits">hits</label>
+								placeholder="hits..." data-sb-validations="required"><label
+								for="hits">조회수</label>
 							<div class="invalid-feedback" data-sb-feedback="hits:required">hits</div>
 						</div>
 

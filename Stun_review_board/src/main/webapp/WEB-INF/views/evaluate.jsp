@@ -30,8 +30,8 @@
 .container {
 	display: flex;
 	justify-content: space-around;
-	width: 1200px;
-	height: 600px;
+	width: 100%;
+	height: 100%;
 	background-color: #fff;
 }
 

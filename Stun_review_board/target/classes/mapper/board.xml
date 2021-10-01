@@ -5,20 +5,49 @@
 <mapper namespace="board">
 	<select id="selectlist1"
 		resultType="com.stun.review_board.dto.BoardDTO">
-		select * from board
+		select * from notice
 	</select>
+
+	<insert id="noticeinsert"
+		parameterType="com.stun.review_board.dto.BoardDTO">
+		INSERT INTO notice
+		(title, content, nickname, wtime,
+		hits)
+		VALUES
+		(#{title}, #{content},#{nickname}, #{wtime}, #{hits})
+	</insert>
+	<update id="noticeupdate"
+		parameterType="com.stun.review_board.dto.BoardDTO">
+		update notice
+		set title=#{title},
+		content=#{content},
+		nickname=#{nickname}, wtime=#{wtime}, hits=#{hits}
+		where idx=#{idx}
+	</update>
+	<update id="noticehit" parameterType="int">
+		update notice
+		set hits=hits+1
+		where idx=#{idx}
+	</update>
+	<delete id="noticedelete" parameterType="int">
+		delete from notice where idx =
+		#{idx}
+	</delete>
+
 	<select id="selectlist2"
 		resultType="com.stun.review_board.dto.BoardDTO">
 		select * from board where title=#{title}
 	</select>
-	<insert id="insert"
+	
+	<insert id="boardinsert"
 		parameterType="com.stun.review_board.dto.BoardDTO">
 		INSERT INTO board
-		(title, content, nickname, wtime, hits)
+		(title, content, nickname, wtime,
+		hits)
 		VALUES
 		(#{title}, #{content},#{nickname}, #{wtime}, #{hits})
 	</insert>
-	<update id="update"
+	<update id="boardupdate"
 		parameterType="com.stun.review_board.dto.BoardDTO">
 		update board
 		set title=#{title},
@@ -26,16 +55,6 @@
 		nickname=#{nickname}, wtime=#{wtime}, hits=#{hits}
 		where idx=#{idx}
 	</update>
-	<update id="boardhit"
-		parameterType="int">
-		update board
-		set hits=hits+1
-		where idx=#{idx}
-	</update>
-	<delete id="delete" parameterType="int">
-		delete from board where idx =
-		#{idx}
-	</delete>
 </mapper>
 
 

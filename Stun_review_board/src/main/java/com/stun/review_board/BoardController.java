@@ -22,6 +22,11 @@ public class BoardController {
 	@Autowired
 	SqlSession sqlsession;
 
+	@RequestMapping(value = "/board")
+	public String board(Locale locale, Model model) {
+		return "board";
+	}
+
 	@RequestMapping(value = "/join")
 	public String join(Locale locale, Model model) {
 		return "join";
@@ -44,7 +49,8 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/update")
-	public String update(Locale locale, Model model) {
+	public String update(Locale locale, Model model, BoardDTO dto) {
+		model.addAttribute(dto);
 		model.addAttribute("msg", "게시판 수정하기로 이동합니다.");
 		return "update";
 
@@ -63,24 +69,39 @@ public class BoardController {
 			model.addAttribute("url", "/write");
 			return "alert";
 		} else {
-			sqlsession.insert("board.insert", dto);
+			sqlsession.insert("board.noticeinsert", dto);
 			model.addAttribute("msg", "글쓰기 성공");
-			model.addAttribute("url", "/evaluate");
+			model.addAttribute("url", "/notice");
+			return "alert";
+		}
+	}
+	
+	@RequestMapping(value = "/boardwrite", produces = "text/html; charset=UTF-8")
+	public String boardwrite(Model model, BoardDTO dto) {
+		if (dto.getTitle().equals("") || dto.getContent().equals("") || dto.getNickname().equals("")
+				|| dto.getWtime().equals("")) {
+			model.addAttribute("msg", "다시확인하세요");
+			model.addAttribute("url", "/write");
+			return "alert";
+		} else {
+			sqlsession.insert("board.boardinsert", dto);
+			model.addAttribute("msg", "글쓰기 성공");
+			model.addAttribute("url", "/board");
 			return "alert";
 		}
 	}
 
 	@RequestMapping(value = "/updateaction", produces = "text/html; charset=UTF-8")
 	public String updateaction(Model model, BoardDTO dto) {
-		sqlsession.update("board.update", dto);
+		sqlsession.update("board.noticeupdate", dto);
 		model.addAttribute("msg", "업데이트 성공");
-		model.addAttribute("url", "/main");
+		model.addAttribute("url", "/notice");
 		return "alert";
 	}
 
 	@RequestMapping(value = "/deleteaction")
 	public String deleteaction(Model model, int idx) {
-		sqlsession.delete("board.delete", idx);
+		sqlsession.delete("board.noticedelete", idx);
 		model.addAttribute("msg", "삭제 성공");
 		model.addAttribute("url", "/notice");
 		return "alert";
@@ -105,7 +126,7 @@ public class BoardController {
 				list.add(new BoardDTO());
 		}
 		model.addAttribute("list", list);
-		return "evaluate";
+		return "board";
 	}
 
 	@RequestMapping(value = "/evaldb", method = { RequestMethod.POST, RequestMethod.GET })

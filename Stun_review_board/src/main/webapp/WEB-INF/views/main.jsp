@@ -24,6 +24,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 #root, html, body {
 	height: 100%;
 	width: 100%;
@@ -245,15 +246,14 @@
 	color: #777;
 }
 
-.welcome
-{
-position:absolute;
-display:flex;
-top:170px;
-width:300px;
-height:30px;
-font-size:20px;
-color:#000000;
+.welcome {
+	position: absolute;
+	display: flex;
+	top: 170px;
+	width: 300px;
+	height: 30px;
+	font-size: 20px;
+	color: #000000;
 }
 </style>
 </head>
@@ -271,7 +271,6 @@ color:#000000;
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
 					<li class="nav-item"><a class="nav-link" href="index">로그인</a></li>
 					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 				</ul>
@@ -545,7 +544,7 @@ color:#000000;
 		}
 	</script>
 	<div class="container2"
-		style="color: black; font: bolder; position: fixed; bottom: 10%; left:35%; width: 100%; ">
+		style="color: black; font: bolder; position: fixed; bottom: 10%; left: 35%; width: 100%;">
 		<h3>▲방문한 장소에 글을 남겨주세요.</h3>
 	</div>
 </body>

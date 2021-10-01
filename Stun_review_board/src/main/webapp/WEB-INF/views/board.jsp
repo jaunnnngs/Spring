@@ -10,14 +10,23 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 
-<title>STUN 글쓰기</title>
+<title>가게 게시판</title>
 
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
 <link rel="stylesheet" href="resources/css/styles.css">
+<link rel="stylesheet"
+	href="/Stun_review_board/resources/css/fontawesome-all.min.css" />
+<link rel="stylesheet" href="/Stun_review_board/resources/css/main.css" />
+<style>
+.table, tr {
+	border: 2px solid gray;
+}
 
+
+</style>
 </head>
 <body>
 	<!-- Responsive navbar-->
@@ -40,63 +49,61 @@
 			</div>
 		</div>
 	</nav>
+	<%
+	String storename = request.getParameter("title");
+	%>
 	<!-- 게시판 섹션-->
 	<section class="bg-light py-5">
-		<div class="container px-5 my-5 px-5">
-			<div class="text-center mb-5"></div>
-			<div class="row gx-5 justify-content-center">
-				<div class="col-lg-6">
+		<div class="container">
+			<div class="text-center"></div>
+			<div class="row justify-content-center" style="width: 100%">
+				<div class="col-lg-8" style="width: 100%">
+					<header>
+						<h2>가게 게시판</h2>
+					</header>
+					<table class="table-wrapper">
+						<thead>
+							<tr>
+								<th>글번호</th>
+								<th>가게이름</th>
+								<th>내용</th>
+								<th>작성자</th>
+								<th>작성날짜</th>
+								<th>조회수</th>
+							</tr>
+						</thead>
 
-
-					<form action="writeaction" method="post">
-						<h2>
-							<td>글쓰기</td>
-						</h2>
-						<!-- title input-->
-						<div class="form-floating mb-3">
-							<input class="form-control" name="title" id="title" type="text"
-								placeholder="title..." data-sb-validations="required" /> <label
-								for="title">제목</label>
-							<div class="invalid-feedback" data-sb-feedback="title:required">title</div>
-						</div>
-						<!-- content input-->
-						<div class="form-floating mb-3">
-							<input class="form-control" name="content" id="content"
-								type="text" placeholder="content..."
-								data-sb-validations="required" /> <label for="content">내용</label>
-							<div class="invalid-feedback" data-sb-feedback="content:required">content</div>
-						</div>
-						<!-- nickname input-->
-						<div class="form-floating mb-3">
-							<input class="form-control" name="nickname" id="nickname"
-								type="text" placeholder="Enter your nickname..."
-								data-sb-validations="required" /> <label for="nickname">닉네임</label>
-							<div class="invalid-feedback"
-								data-sb-feedback="nickname:required">nickname</div>
-						</div>
-						<!-- date 입력-->
-						<div class="form-floating mb-3">
-							<input class="form-control" name="wtime" id="wtime" type="text"
-								placeholder="wtime..." data-sb-validations="required" /> <label
-								for="wtime">날짜</label>
-							<div class="invalid-feedback" data-sb-feedback="wtime:required">wtime</div>
-						</div>
-
-						<!-- hits 입력-->
-						<div class="form-floating mb-3">
-							<input class="form-control" name="hits" id="hits" type="text"
-								placeholder="hits..." data-sb-validations="required" /> <label
-								for="hits">hits</label>
-							<div class="invalid-feedback" data-sb-feedback="hits:required">hits</div>
-						</div>
-
-						<!--마지막 버튼!  -->
-						<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-							<input class="btn btn-outline-primary" type="submit" value="저장">
-							<input class="btn btn-outline-primary" type="reset" value="다시입력">
-						</div>
-					</form>
-
+						<tbody>
+							<td><%=storename%></td>
+							<c:forEach items="${list}" var="dto">
+								<tr>
+									<td><c:if test="${dto.idx ne '0'}">${dto.idx}</c:if></td>
+									<td>${dto.title}</td>
+									<td>${dto.content}</td>
+									<td>${dto.nickname}</td>
+									<td>${dto.wtime}</td>
+									<td>${dto.hits}</td>
+									<td><a class="btn btn-outline-primary"
+										href="update?idx=${dto.idx}">수정</a></td>
+									<td><a class="btn btn-outline-primary"
+										href="deleteaction?idx=${dto.idx}">삭제</a></td>
+								</tr>
+							</c:forEach>
+							<tr>
+								<form action="boardwrite" method="post">
+									<td><%=storename%></td>
+									<td><input type="hidden" name="title" value=<%=storename%>></td>
+									<td><input type="text" name="content"
+										placeholder="후기를 입력하세요"></td>
+									<td><input type="text" name="nickname"
+										placeholder="등록하실 닉네임"></td>
+									<td><input type="text" name="wtime" placeholder="오늘 날짜"></td>
+									<td><input type="text" name="hits" placeholder="조회수"></td>
+									<td><input type="submit" value="등록하기"></td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
