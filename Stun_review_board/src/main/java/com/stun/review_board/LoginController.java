@@ -32,4 +32,10 @@ public class LoginController {
 			return "alert";
 		}
 	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
 }

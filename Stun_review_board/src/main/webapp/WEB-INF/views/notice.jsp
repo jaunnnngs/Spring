@@ -39,11 +39,17 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="index">로그인</a></li>
+					<c:if test="${not empty sessionScope.dto.id }">
+						<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="logout">로그아웃</a></li>
+					</c:if>
+					<c:if test="${empty sessionScope.dto.id}">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="index">로그인</a></li>
+					</c:if>
 					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 				</ul>
-				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
 			</div>
 		</div>
 	</nav>
@@ -74,7 +80,7 @@
 						<tbody>
 							<c:forEach items="${list}" var="dto">
 								<tr>
-								
+
 									<td><c:if test="${dto.idx ne '0'}">${dto.idx}</c:if></td>
 
 									<td>${dto.title}</td>

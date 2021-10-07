@@ -1,6 +1,7 @@
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -271,10 +272,17 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="index">로그인</a></li>
+					<c:if test="${not empty sessionScope.dto.id }">
+						<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="logout">로그아웃</a></li>
+					</c:if>
+					<c:if test="${empty sessionScope.dto.id}">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="index">로그인</a></li>
+					</c:if>
 					<li class="nav-item"><a class="nav-link" href="notice">공지사항</a></li>
 				</ul>
-				<div style="color: white;">${sessionScope.dto.id}님환영합니다.</div>
 			</div>
 		</div>
 	</nav>
