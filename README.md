@@ -2,7 +2,7 @@
 
 장소마다 후기 남길 수 있는 프로그램입니다.
 
-포트폴리오보기 >>>>> https://jaunnnngs.github.io/portfolio/
+포트폴리오보기 >>>>> https://jaunnnngs.github.io/portfolio/ <br>
 이메일주소 >>>>> jaunnnngs@naver.com
 
 ![슬라이드1](https://user-images.githubusercontent.com/81130206/136886672-b5bed056-1fcc-4899-b8ae-78c681cf9035.JPG)
