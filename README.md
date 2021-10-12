@@ -1,9 +1,13 @@
 # Spring
 
 장소마다 후기 남길 수 있는 프로그램입니다.
-
+<h4>정민</h4>
 포트폴리오보기 >>>>> https://jaunnnngs.github.io/portfolio/ <br>
 이메일주소 >>>>> jaunnnngs@naver.com
+<h4>민영</h4>
+포트폴리오보기 >>>>> https://minyoung0.github.io/  <br>
+이메일주소 >>>>> hmylove01@naver.com  
+<br><br>
 
 ![슬라이드1](https://user-images.githubusercontent.com/81130206/136886672-b5bed056-1fcc-4899-b8ae-78c681cf9035.JPG)
 ![슬라이드2](https://user-images.githubusercontent.com/81130206/136886676-37ba4e0a-82bb-498d-825f-a2fe51a31f94.JPG)
