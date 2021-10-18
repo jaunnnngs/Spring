@@ -182,6 +182,8 @@ margin-right:30px;
 		</div>
 	</div>
 
+<<<<<<< HEAD
+=======
 <script src="/flavourgood/resources/assets/js/jquery.min.js"></script>
 	<script src="/flavourgood/resources/assets/js/browser.min.js"></script>
 	<script src="/flavourgood/resources/assets/js/breakpoints.min.js"></script>
@@ -192,6 +194,7 @@ margin-right:30px;
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
 	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+>>>>>>> main
 
 </body>
 </html>
