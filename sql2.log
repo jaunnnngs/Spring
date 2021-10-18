@@ -1,0 +1,23 @@
+CREATE SCHEMA `stun2` DEFAULT CHARACTER SET utf8 ;
+
+CREATE TABLE `stun2`.`member` (
+  `idx` INT NOT NULL AUTO_INCREMENT,
+  `nickname` VARCHAR(45) NULL,
+  `name` VARCHAR(45) NULL,
+  `id` VARCHAR(45) NULL,
+  `pw` VARCHAR(45) NULL,
+  PRIMARY KEY (`idx`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+CREATE TABLE `stun2`.`board` (
+  `idx` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(150) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
+  `content` VARCHAR(500) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
+  `nickname` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
+  `wtime` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' NOT NULL,
+  `hits` INT NOT NULL,
+  PRIMARY KEY (`idx`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;

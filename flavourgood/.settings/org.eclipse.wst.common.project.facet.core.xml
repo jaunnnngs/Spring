@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
+<<<<<<< HEAD
   <runtime name="Apache Tomcat v8.5"/>
+=======
+>>>>>>> main
   <fixed facet="jst.web"/>
   <fixed facet="jst.java"/>
   <installed facet="jst.web" version="2.5"/>
   <installed facet="jst.java" version="1.8"/>
+<<<<<<< HEAD
+<<<<<<<< HEAD:flavourgood/.settings/org.eclipse.wst.common.project.facet.core.xml
   <installed facet="wst.jsdt.web" version="1.0"/>
+========
+>>>>>>>> main:Stun_review_board/.settings/org.eclipse.wst.common.project.facet.core.xml
+=======
+  <installed facet="wst.jsdt.web" version="1.0"/>
+>>>>>>> main
 </faceted-project>
