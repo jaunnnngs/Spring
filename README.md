@@ -1,7 +1,7 @@
 # Spring
 
 장소마다 후기 남길 수 있는 프로그램입니다. <br>
-발표영상과 자세한  보고 싶다면 여기로 >>>> https://jaunnnngs21.tistory.com/25?category=1015319 
+자세한 내용은 여기로 >>>> https://jaunnnngs21.tistory.com/38?category=1015320 
 <h4>정민</h4>
 포트폴리오보기 >>>>> https://jaunnnngs.github.io/portfolio/ <br>
 블로그 구경가기 >>>>> https://jaunnnngs21.tistory.com/<br>
