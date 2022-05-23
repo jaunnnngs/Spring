@@ -1,8 +1,10 @@
 # Spring
 
-장소마다 후기 남길 수 있는 프로그램입니다.
+장소마다 후기 남길 수 있는 프로그램입니다. <br>
+발표영상을 보고 싶다면 여기로 >>>> https://jaunnnngs21.tistory.com/25?category=1015319 
 <h4>정민</h4>
 포트폴리오보기 >>>>> https://jaunnnngs.github.io/portfolio/ <br>
+블로그 구경가기 >>>>> https://jaunnnngs21.tistory.com/<br>
 이메일주소 >>>>> jaunnnngs@naver.com
 <h4>민영</h4>
 포트폴리오보기 >>>>> https://minyoung0.github.io/  <br>
